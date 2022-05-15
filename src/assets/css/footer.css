@@ -1,0 +1,31 @@
+.footer {
+	@apply bg-primary-200 font-primary;
+}
+
+.footer__content {
+	@apply max-w-6xl flex flex-wrap justify-center;
+}
+
+.footer__col {
+	@apply p-5 w-48;
+}
+
+.footer__title {
+	@apply text-white font-medium;
+}
+
+.footer__img {
+	@apply mt-2 w-48 h-36 object-cover rounded-full;
+}
+
+.footer__link {
+	@apply my-3 block text-white;
+}
+
+.footer__icon {
+	@apply flex items-center justify-center h-16 w-16 rounded-full bg-white hover:bg-green-500 my-2;
+}
+
+.footer__date {
+	@apply flex flex-col md:flex-row max-w-6xl pb-5 px-3 m-auto pt-4 text-white text-lg;
+}

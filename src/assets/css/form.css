@@ -1,0 +1,23 @@
+.form__label {
+	@apply uppercase tracking-wide text-gray-700 text-xs font-bold font-primary mb-2;
+}
+
+.form__input {
+	@apply appearance-none block w-full bg-gray-200 font-primary text-gray-700 rounded py-3 px-4 mb-3;
+}
+
+.form__toggle {
+	@apply relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in;
+}
+
+.form__submit {
+	@apply block w-full max-w-xs mx-auto bg-primary-200 hover:bg-green-700 focus:bg-green-700 text-white rounded-lg px-3 py-3 font-semibold;
+}
+
+.toggle-label {
+	@apply block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer;
+}
+
+.toggle-msg {
+	@apply text-xs uppercase font-bold text-gray-700;
+}
