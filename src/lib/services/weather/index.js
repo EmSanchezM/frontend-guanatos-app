@@ -11,7 +11,7 @@ export const getWeatherByLocation = async (lat, lng, setWeather) => {
 
 	if (data.cod === '404') {
 		weatherDTO.message = data.message;
-		setWeather(weatherData);
+		setWeather(weatherDTO);
 	} else {
 		weatherDTO = {
 			location: data.name,
