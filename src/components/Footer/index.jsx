@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 /*STATICS FILES*/
 import logo from '../../assets/logo/logo.png';
 /*ICONS*/
-import { FacebookIcon, InstagramIcon, TwitterIcon } from '../../utils/icons';
+import { FacebookIcon, InstagramIcon, TwitterIcon } from '../Icons';
 
 const Footer = () => {
 	const [t] = useTranslation('global');
