@@ -9,13 +9,11 @@ import InstagramIcon from './InstagramIcon';
 import LocationIcon from './LocationIcon';
 import MailIcon from './MailIcon';
 import MenuBarIcon from './MenuBarIcon';
-import MisionIcon from './MisionIcon';
 import PhotoIcon from './PhotoIcon';
 import PlayIcon from './PlayIcon';
 import PlusIcon from './PlusIcon';
 import ShoppingCartIcon from './ShoppingCartIcon';
 import SpinnerIcon from './SpinnerIcon';
-import TacoIcon from './TacoIcon';
 import TwitterIcon from './TwitterIcon';
 import UploadIcon from './UploadIcon';
 import YoutubeIcon from './YoutubeIcon';
@@ -32,13 +30,11 @@ export {
 	LocationIcon,
 	MailIcon,
 	MenuBarIcon,
-	MisionIcon,
 	PhotoIcon,
 	PlayIcon,
 	PlusIcon,
 	ShoppingCartIcon,
 	SpinnerIcon,
-	TacoIcon,
 	TwitterIcon,
 	UploadIcon,
 	YoutubeIcon
