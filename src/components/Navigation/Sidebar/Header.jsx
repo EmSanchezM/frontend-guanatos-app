@@ -1,18 +1,17 @@
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
-import { useHistory } from 'react-router';
-import authContext from '../../../utils/context/auth/authContext';
-/*ICON*/
+import { useNavigate } from 'react-router';
+import authContext from '../../../lib/context/auth/authContext';
 import { MenuBarIcon } from '../../Icons';
 
 const Header = ({ toggle }) => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	const AuthContext = useContext(authContext);
 	const { LogOut } = AuthContext;
 
 	const handleLogout = () => {
 		LogOut();
-		history.push('/');
+		navigate('/');
 	};
 
 	return (

@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { TacoIcon } from '../../components/Icons';
 
 const About = () => {
 	const [t] = useTranslation('global');
@@ -22,9 +21,7 @@ const About = () => {
 						<p className='contact-card__content'>
 							{t('aboutPage.misionParrafo')}
 						</p>
-						<div className='contact-card__icon'>
-							<TacoIcon />
-						</div>
+						<div className='contact-card__icon'>Taco Icon</div>
 					</div>
 					<div className='contact__card'>
 						<h2 className='contact-card__title'>

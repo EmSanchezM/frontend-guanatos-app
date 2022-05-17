@@ -12,6 +12,7 @@
 		"css:watch": "postcss src/assets/css/index.css -o src/assets/css/styles.css --watch"
 	},
 	"dependencies": {
+		"@react-google-maps/api": "2.10.2",
 		"axios": "0.27.2",
 		"formik": "2.2.9",
 		"framer-motion": "6.3.3",
@@ -21,6 +22,7 @@
 		"react-dom": "18.0.0",
 		"react-i18next": "11.16.9",
 		"react-router-dom": "6.3.0",
+		"react-toastify": "9.0.1",
 		"yup": "0.32.11"
 	},
 	"devDependencies": {

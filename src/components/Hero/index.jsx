@@ -1,7 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-/*ICONS*/
 import { ArrowLeftIcon, ArrowRightIcon } from '../Icons';
 
 const HeroSection = ({ slides, showModal }) => {

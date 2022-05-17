@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-/*COMPONENTS*/
 import DesktopSidebar from './DesktopSidebar';
 import MobileSidebar from './MobileSidebar';
 

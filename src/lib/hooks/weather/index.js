@@ -1,16 +1,23 @@
 import { useEffect, useState } from 'react';
 import { getWeatherByLocation } from '../../services/weather';
 
-export const useWeatherByLocation = async ubication => {
-	const [weather, setWeather] = useState();
+export const useWeather = ubication => {
+	const [weather, setWeather] = useState({
+		data: [],
+		error: false
+	});
 
-	if (ubication !== undefined) {
-		const { lng, lat } = ubication;
+	const setData = newData => {
+		setWeather({ data: newData, error: false });
+	};
 
-		useEffect(() => {
-			getWeatherByLocation(lat, lng, setWeather);
-		}, []);
-	}
+	const setError = () => setWeather({ data: [], error: true });
 
-	return { weather };
+	useEffect(() => {
+		getWeatherByLocation(ubication, setData, setError);
+	}, []);
+
+	console.log(weather);
+
+	return { weather: weather.data };
 };

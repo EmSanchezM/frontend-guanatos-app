@@ -1,17 +1,25 @@
-const URL_WEATHER_API = import.meta.env.VITE_WEATHER_MAP_API;
-const API_KEY_WEATHER = import.meta.env.VITE_WEATHER_MAP_KEY;
+import axios from 'axios';
+import { WEATHER_MAP_API } from '../../../constants/api';
 
-export const getWeatherByLocation = async (lat, lng, setWeather) => {
+export const getWeatherByLocation = async (ubication, setData, setError) => {
 	const weatherDTO = {};
+	const { lng, lat } = ubication;
 
-	const resp = await fetch(
-		`${URL_WEATHER_API}/weather/?units=imperial&lat=${lat}&lon=${lng}&appid=${API_KEY_WEATHER}`
+	/*
+		const examplelat = 42.598999;
+		const examplelon = -5.5682413;
+	*/
+
+	const resp = await axios.get(
+		`${WEATHER_MAP_API}/weather/?units=imperial&lat=${lat}&lon=${lng}&appid=${
+			import.meta.env.VITE_WEATHER_MAP_KEY
+		}`
 	);
-	const data = await resp.json();
+	const { data } = resp;
 
-	if (data.cod === '404') {
+	if (data.response.status === 404) {
 		weatherDTO.message = data.message;
-		setWeather(weatherDTO);
+		setError(weatherDTO);
 	} else {
 		weatherDTO = {
 			location: data.name,
@@ -20,7 +28,7 @@ export const getWeatherByLocation = async (lat, lng, setWeather) => {
 			icon: `https://openweathermap.org/img/w/${data.weather[0].icon}.png`,
 			date: getDate()
 		};
-		setWeather(weatherDTO);
+		setData(weatherDTO);
 	}
 };
 

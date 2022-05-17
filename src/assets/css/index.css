@@ -1,10 +1,250 @@
-@import './fonts.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import './form.css';
-@import './card.css';
-@import './login.css';
-@import './footer.css';
+.form__label {
+	@apply uppercase tracking-wide text-gray-700 text-xs font-bold font-primary mb-2;
+}
+
+.form__input {
+	@apply appearance-none block w-full bg-gray-200 font-primary text-gray-700 rounded py-3 px-4 mb-3;
+}
+
+.form__toggle {
+	@apply relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in;
+}
+
+.form__submit {
+	@apply block w-full max-w-xs mx-auto bg-primary-200 hover:bg-green-700 focus:bg-green-700 text-white rounded-lg px-3 py-3 font-semibold;
+}
+
+.toggle-label {
+	@apply block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer;
+}
+
+.toggle-msg {
+	@apply text-xs uppercase font-bold text-gray-700;
+}
+
+.pattern__background {
+	background-image: url('../images/waves_pattern.svg');
+	background-repeat: no-repeat;
+}
+
+.header {
+	@apply flex justify-between items-center h-16 relative shadow-sm font-mono font-primary;
+}
+
+.navbar__link {
+	@apply p-4 md:p-1 text-white hover:text-primary-400;
+}
+
+.navbar__link-order {
+	@apply p-4 md:p-1 text-white hover:bg-primary-400 rounded-full;
+}
+
+.hero__leftIcon {
+	@apply absolute top-1/4 lg:top-1/2 left-8 lg:left-28 z-10 cursor-pointer text-primary-200 bg-white w-7 h-7 rounded-full;
+}
+
+.hero__rightIcon {
+	@apply absolute top-1/4 lg:top-1/2 right-8 lg:right-28 z-10 cursor-pointer text-primary-200 bg-white w-7 h-7 rounded-full;
+}
+
+.hero__section {
+	@apply flex flex-col md:flex-row justify-center;
+}
+
+.hero__image {
+	@apply max-w-full font-primary object-contain md:rounded-3xl;
+}
+
+.hero__shortMessage {
+	@apply text-sm md:text-xl md:font-medium font-extralight tracking-widest text-white bg-primary-200 hover:bg-primary-400 rounded-full p-2;
+}
+
+.hero__title {
+	@apply mb-4 mt-2 text-xl md:text-6xl md:font-medium font-extralight tracking-widest text-gray-700;
+}
+
+.hero__paragraph {
+	@apply mb-4 mt-2 text-base font-medium tracking-wider md:text-center text-gray-700;
+}
+
+.button__floating {
+	@apply fixed w-36 flex flex-col justify-center h-screen z-10 left-1/9_1 top-60 lg:top-64 md:top-64;
+}
+
+.button__floating-link {
+	@apply flex justify-center items-center py-3 mb-2 rounded-full bg-primary-400 hover:bg-primary-200 cursor-pointer;
+}
+
+.dropdown__menu {
+	@apply grid grid-rows-4 text-center items-center border-2 border-primary-200 z-40;
+}
+
+.dropdown__link {
+	@apply p-4 font-medium font-primary;
+}
+
+.gallery__grid {
+	@apply grid grid-cols-1 md:grid-cols-3 gap-4 mx-2 mt-4 mb-4;
+}
+
+.backdrop {
+	@apply fixed top-0 left-0 w-full h-full opacity-40;
+}
+
+.backdrop__img {
+	max-width: 90%;
+	max-height: 90%;
+	@apply block mt-14 mx-auto border-2 border-white;
+}
+
+/*.backdrop__video {
+	@apply aspect-w-16 aspect-h-9 block mt-14 mx-auto border-2 border-white;
+}*/
+
+.card {
+	@apply overflow-hidden cursor-pointer font-primary rounded-lg shadow-md mb-3;
+}
+
+.card__img {
+	@apply w-full h-60 object-cover;
+}
+
+.card__header {
+	@apply mb-2 text-2xl font-semibold px-1;
+}
+
+.card__footer {
+	@apply flex justify-between mx-2 mb-4;
+}
+
+.card__text {
+	@apply text-xl mb-4 px-1;
+}
+
+.card__price {
+	@apply border-2 border-primary-200 hover:border-primary-400 font-bold p-3 ml-2 rounded-full font-primary text-gray-600;
+}
+
+.card__btn {
+	@apply flex items-center p-1 text-xl text-center border-2 border-primary-200 cursor-pointer hover:border-primary-400 rounded;
+}
+
+.contact__header {
+	background-image: url('https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=320');
+	background-repeat: no-repeat;
+	@apply flex flex-col md:flex-row justify-center w-full h-80 lg:h-96 bg-no-repeat bg-cover;
+}
+
+.contact__title {
+	@apply font-bold lg:text-6xl text-2xl text-white mb-4 uppercase;
+}
+
+.contact__container {
+	@apply w-full h-80 lg:h-96 bg-opacity-50 flex justify-center items-center;
+}
+
+.contact__grid {
+	@apply grid grid-cols-1 gap-1 lg:gap-3 md:grid-cols-2 lg:my-2 my-4;
+}
+
+.contact__card {
+	@apply rounded-md shadow-md m-2 bg-gradient-to-r from-primary-200 to-green-400;
+}
+
+.contact-card__title {
+	@apply font-bold lg:text-2xl italic font-serif text-center text-white mt-4 mb-4;
+}
+
+.contact-card__content {
+	@apply font-medium ml-2 mt-2 px-2 text-center text-xl text-white font-serif;
+}
+
+.contact-card__icon {
+	@apply px-2 lg:py-6 h-20 w-20;
+}
+
+.login__container {
+	@apply h-screen pt-12 pb-6 px-2 md:px-0 bg-gradient-to-r from-primary-200 to-white;
+}
+
+.login__header {
+	@apply max-w-lg mx-auto;
+}
+
+.login__title {
+	@apply text-2xl lg:text-4xl font-bold text-center;
+}
+
+.login__content {
+	@apply bg-white max-w-lg mx-auto p-8 md:p-12 lg:my-10 my-4 rounded-lg shadow-2xl;
+}
+
+.login__alert {
+	@apply flex bg-red-200 p-5 rounded border-b-2 border-red-300;
+}
+
+.login__alert-msg {
+	@apply font-semibold text-lg text-red-800 capitalize;
+}
+
+.login__link {
+	@apply mx-auto bg-primary-200 hover:bg-green-600 text-white font-bold px-10 py-3 rounded shadow-lg hover:shadow-xl transition duration-200;
+}
+
+.login__submit {
+	@apply mx-auto flex bg-primary-200 hover:bg-green-600 text-white font-bold px-10 py-3 rounded shadow-lg hover:shadow-xl transition duration-200;
+}
+
+.food__article {
+	@apply flex flex-col justify-center items-center mx-2;
+}
+
+.food__title {
+	@apply text-xl md:text-4xl font-bold text-gray-700 font-primary;
+}
+
+.food__grid {
+	@apply grid grid-cols-1 gap-3 md:grid-cols-3 mt-2 px-1;
+}
+
+.loader__container {
+	@apply flex justify-center items-center mt-8;
+}
+
+.footer {
+	@apply bg-primary-200 font-primary;
+}
+
+.footer__content {
+	@apply max-w-6xl flex flex-wrap justify-center;
+}
+
+.footer__col {
+	@apply p-5 w-48;
+}
+
+.footer__title {
+	@apply text-white font-medium;
+}
+
+.footer__img {
+	@apply mt-2 w-48 h-36 object-cover rounded-full;
+}
+
+.footer__link {
+	@apply my-3 block text-white;
+}
+
+.footer__icon {
+	@apply flex items-center justify-center h-16 w-16 rounded-full bg-white hover:bg-green-500 my-2;
+}
+
+.footer__date {
+	@apply flex flex-col md:flex-row max-w-6xl pb-5 px-3 m-auto pt-4 text-white text-lg;
+}

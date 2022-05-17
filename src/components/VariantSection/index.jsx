@@ -8,7 +8,7 @@ const VariantSection = ({ setSelectedVideo, setSelectedImg, allMedia }) => {
 	);
 	let sections = ['A', 'B', 'C'];
 
-	console.log('variant ', variantData);
+	console.log({ allMedia, variantData });
 
 	return (
 		<>

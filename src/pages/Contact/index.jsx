@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 import logo from '../../assets/logo/logo.png';
 import { Input, TextArea } from '../../components/Form';
 /*SERVICES PUBLISHER*/
-import PublisherService from '../../services/publisher';
+import { postContactUs } from '../../lib/services/publisher';
 
 const ContactUs = () => {
 	const [t] = useTranslation('global');
@@ -37,7 +37,7 @@ const ContactUs = () => {
 
 	const handleSubmit = values => {
 		console.log(values);
-		PublisherService.postContactUs(values);
+		postContactUs(values);
 	};
 
 	return (

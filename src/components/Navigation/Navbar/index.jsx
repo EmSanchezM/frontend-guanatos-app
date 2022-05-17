@@ -2,11 +2,10 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-/*STATICS FILES*/
 import mexican from '../../../assets/images/mexican_flag.png';
 import usa from '../../../assets/images/usa_flag.png';
 import logo from '../../../assets/logo/logo.png';
-import { useWeatherByLocation } from '../../../lib/hooks/weather';
+import { useWeather } from '../../../lib/hooks/weather';
 import { MenuBarIcon } from '../../Icons';
 
 const Navbar = ({ toogle, ubication }) => {
@@ -19,7 +18,7 @@ const Navbar = ({ toogle, ubication }) => {
 
 	const [language, setLanguage] = useState(idiom);
 
-	const { weather } = useWeatherByLocation(ubication);
+	const { weather } = useWeather(ubication);
 
 	const [t, i18n] = useTranslation('global');
 
