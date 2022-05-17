@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import Axios from '../../Api/axios';
 
-const postAllMedia = async (media, setMedia, history, path) => {
+const postAllMedia = async (media, setMedia, navigate, path) => {
 	console.log('MEDIA FORM ', media);
 
 	try {
@@ -11,7 +11,7 @@ const postAllMedia = async (media, setMedia, history, path) => {
 		if (data.status === 'success') {
 			console.log(data.status);
 			await getAllMedia(setMedia);
-			history.push(path);
+			navigate(path);
 			toast.success('GALLERY ADDED SUCCESFULLY');
 		}
 	} catch (error) {

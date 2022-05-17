@@ -1,16 +1,14 @@
 import { Form, Formik } from 'formik';
 import { useState } from 'react';
-import { useHistory } from 'react-router';
-/*NOTIFICATIONS CSS*/
+import { useNavigate } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-/*COMPONENTS FORM*/
 import { InputFile } from '../../../components/Form';
-/*SERVICES PUBLISHER*/
-import PublisherService from '../../../services/publisher';
+import { postAllMedia } from '../../../lib/services/publisher';
 
 const VariantMediaForm = () => {
-	const history = useHistory();
+	const navigate = useNavigate();
+
 	const [variantMedia, setVariantMedia] = useState({
 		fileOne: '',
 		fileTwo: '',
@@ -30,12 +28,7 @@ const VariantMediaForm = () => {
 		formData.append('section', 'variant');
 		formData.append('files', files);
 
-		PublisherService.postAllMedia(
-			formData,
-			setAllMedia,
-			history,
-			'/publicist/media'
-		);
+		postAllMedia(formData, setAllMedia, navigate, '/publicist/media');
 
 		submitProps.setSubmitting(false);
 		submitProps.resetForm();

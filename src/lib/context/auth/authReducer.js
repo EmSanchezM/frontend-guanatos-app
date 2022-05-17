@@ -8,13 +8,13 @@ const authReducer = (state, action) => {
 				...state,
 				token: action.payload.token,
 				user: action.payload.data.user,
-				autenticado: true
+				authenticated: true
 			};
 
 		case LOGIN_ERROR:
 			return {
 				...state,
-				autenticado: false,
+				authenticated: false,
 				error: action.payload
 			};
 
@@ -24,7 +24,7 @@ const authReducer = (state, action) => {
 				token: null,
 				user: null,
 				error: null,
-				autenticado: false
+				authenticated: false
 			};
 		default:
 			return state;

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getBranches } from '../../services/branches';
-/*COMPONENTS*/
+import { getBranches } from '../../lib/services/branches';
 import LocationCard from './LocationCard';
 import LocationMap from './LocationMap';
 
@@ -97,10 +96,10 @@ const locations = [
  */
 
 const Locations = ({ ubication }) => {
-	const [allBranches, setAllBranches] = useState([]);
+	const [branches, setBranches] = useState([]);
 
 	useEffect(() => {
-		getBranches(setAllBranches);
+		getBranches(setBranches);
 	}, []);
 
 	return (
@@ -113,7 +112,7 @@ const Locations = ({ ubication }) => {
 				</div>
 			</div>
 			<div className='hidden lg:block lg:my-12 lg:mx-4'>
-				<LocationMap ubication={ubication} allBranches={allBranches} />
+				<LocationMap ubication={ubication} allBranches={branches} />
 			</div>
 		</section>
 	);

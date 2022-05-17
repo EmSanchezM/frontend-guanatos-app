@@ -1,14 +1,13 @@
 import { Form, Formik } from 'formik';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { InputFile } from '../../../components/Form';
-/*SERVICES PUBLISHER*/
-import PublisherService from '../../../services/publisher';
+import { postAllMedia } from '../../../lib/services/publisher';
 
 const GalleryForm = () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 
 	const [galleryImages, setGalleryImages] = useState({
 		imageOne: '',
@@ -31,12 +30,7 @@ const GalleryForm = () => {
 		formData.append('section', 'gallery');
 		formData.append('files', files);
 
-		PublisherService.postAllMedia(
-			formData,
-			setAllMedia,
-			history,
-			'/publicist/gallery'
-		);
+		postAllMedia(formData, setAllMedia, navigate, '/publicist/gallery');
 
 		submitProps.setSubmitting(false);
 		submitProps.resetForm();

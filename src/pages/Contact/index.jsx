@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
 import logo from '../../assets/logo/logo.png';
 import { Input, TextArea } from '../../components/Form';
-/*SERVICES PUBLISHER*/
 import { postContactUs } from '../../lib/services/publisher';
 
 const ContactUs = () => {

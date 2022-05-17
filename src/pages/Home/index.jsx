@@ -7,7 +7,6 @@ import ModalAlert from '../../components/ModalAlert';
 import VariantSection from '../../components/VariantSection';
 import Video from '../../components/Video';
 import { useMultimedia } from '../../lib/hooks/publisher';
-//import { SliderData } from '../../components/Hero/SliderData';
 
 const Home = () => {
 	const [showModal, setShowModal] = useState(false);
@@ -15,8 +14,6 @@ const Home = () => {
 	const [selectedVideo, setSelectedVideo] = useState(null);
 
 	const { gallery, media, carousel } = useMultimedia();
-
-	console.log({ gallery, media });
 
 	return (
 		<>

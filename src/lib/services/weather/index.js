@@ -2,7 +2,7 @@ import axios from 'axios';
 import { WEATHER_MAP_API } from '../../../constants/api';
 
 export const getWeatherByLocation = async (ubication, setData, setError) => {
-	const weatherDTO = {};
+	let weatherDTO = {};
 	const { lng, lat } = ubication;
 
 	/*
@@ -17,7 +17,7 @@ export const getWeatherByLocation = async (ubication, setData, setError) => {
 	);
 	const { data } = resp;
 
-	if (data.response.status === 404) {
+	if (!data) {
 		weatherDTO.message = data.message;
 		setError(weatherDTO);
 	} else {

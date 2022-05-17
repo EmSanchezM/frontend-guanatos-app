@@ -1,7 +1,6 @@
 import { Form, Formik } from 'formik';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-/*NOTIFICATIONS CSS*/
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
@@ -12,9 +11,8 @@ import {
 	InputToggle,
 	Select
 } from '../../components/Form';
-import { getPositions } from '../../services/positions';
-/*SERVICES*/
-import PublisherService from '../../services/publisher';
+import { getPositions } from '../../lib/services/positions';
+import { postEmployment } from '../../lib/services/publisher';
 
 const Employment = () => {
 	const [positions, setPositions] = useState([]);
@@ -58,7 +56,7 @@ const Employment = () => {
 		formData.append('cityStateZip', values.cityStateZip);
 		formData.append('resume', values.resume);
 		formData.append('positionDesired', values.positionDesired);
-		PublisherService.postEmployment(formData);
+		postEmployment(formData);
 	};
 
 	return (

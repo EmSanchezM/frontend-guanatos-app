@@ -30,9 +30,7 @@ const About = () => {
 						<p className='contact-card__content'>
 							{t('aboutPage.visionParrafo')}
 						</p>
-						<div className='px-2 h-20 w-20'>
-							<TacoIcon />
-						</div>
+						<div className='px-2 h-20 w-20'>Taco Icon</div>
 					</div>
 				</div>
 			</div>

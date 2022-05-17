@@ -5,7 +5,10 @@ import Dropdown from '../components/Navigation/Dropdown';
 import Navbar from '../components/Navigation/Navbar';
 import About from '../pages/About';
 import ContactUs from '../pages/Contact';
+import Employment from '../pages/Employment';
 import Home from '../pages/Home';
+import Locations from '../pages/Locations';
+import Login from '../pages/Login';
 
 const HomeRouter = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -50,14 +53,20 @@ const HomeRouter = () => {
 	});
 
 	return (
-		<div className='flex flex-col min-h-screen'>
+		<div className='flex flex-col min-h-screen pattern__background'>
 			<Navbar toogle={toggle} ubication={ubication} />
 			<Dropdown isOpen={isOpen} toggle={toggle} />
 			<main className='flex-grow'>
 				<Routes>
 					<Route path='/' element={<Home />} />
-					<Route path='/about-us' element={About} />
-					<Route path='/contact-us' element={ContactUs} />
+					<Route path='/about-us' element={<About />} />
+					<Route path='/contact-us' element={<ContactUs />} />
+					<Route
+						path='/locations'
+						element={<Locations ubication={ubication} />}
+					/>
+					<Route path='/work-with-us' element={<Employment />} />
+					<Route path='/publicist-login' element={<Login />} />
 				</Routes>
 			</main>
 			<Footer />

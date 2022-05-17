@@ -1,16 +1,16 @@
 /*Managment state form*/
 import { Form, Formik } from 'formik';
 import { useContext, useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Input } from '../../components/Form';
-import authContext from '../../utils/context/auth/authContext';
+import authContext from '../../lib/context/auth/authContext';
 
 const Login = () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 
 	const AuthContext = useContext(authContext);
-	const { autenticado, error, LogIn, user } = AuthContext;
+	const { authenticated, error, LogIn, user } = AuthContext;
 
 	const [userAuth, setUserAuth] = useState({
 		email: '',
@@ -36,9 +36,9 @@ const Login = () => {
 
 	useEffect(() => {
 		if (user) {
-			history.push('publicist/start');
+			navigate('publicist/start');
 		}
-	}, [user, history]);
+	}, [user]);
 
 	return (
 		<section className='login__container'>
@@ -84,7 +84,7 @@ const Login = () => {
 								</div>
 								<button
 									type='submit'
-									disabled={autenticado}
+									disabled={authenticated}
 									className='login__submit'
 								>
 									Sign In
