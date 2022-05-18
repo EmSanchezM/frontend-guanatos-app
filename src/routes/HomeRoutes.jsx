@@ -74,4 +74,4 @@ const HomeRouter = () => {
 	);
 };
 
-export default HomeRouter;
+export default HomeRoutes;
