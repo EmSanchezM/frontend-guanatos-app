@@ -1,12 +1,12 @@
 import { Form, Formik } from 'formik';
 import { useState } from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import * as Yup from 'yup';
 import { Input, InputFileWithoutPreview } from '../../../components/Form';
-import PublisherServices from '../../../services/publisher';
+import { postCarousel } from '../../../lib/services/publisher';
 
 const FormCarousel = () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 
 	const [formCarousel, setFormCarousel] = useState({
 		title: '',
@@ -23,8 +23,8 @@ const FormCarousel = () => {
 
 	const handleSubmit = values => {
 		//console.log( values );
-		PublisherServices.postCarousel(values);
-		history.push('/publicist/start');
+		postCarousel(values);
+		navigate('/publicist/start');
 
 		setFormCarousel({
 			title: '',

@@ -10,7 +10,7 @@ import Home from '../pages/Home';
 import Locations from '../pages/Locations';
 import Login from '../pages/Login';
 
-const HomeRouter = () => {
+const HomeRoutes = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [ubication, setUbication] = useState({
 		lng: 0,
@@ -53,7 +53,7 @@ const HomeRouter = () => {
 	});
 
 	return (
-		<div className='flex flex-col min-h-screen pattern__background'>
+		<div className='flex flex-col min-h-screen'>
 			<Navbar toogle={toggle} ubication={ubication} />
 			<Dropdown isOpen={isOpen} toggle={toggle} />
 			<main className='flex-grow'>

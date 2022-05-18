@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import Loader from '../../../components/Loader';
-import PublisherService from '../../../services/publisher';
+import { getAllMedia } from '../../../lib/services/publisher';
 import CarouselRow from './CarouselRow';
 
 const CarouselTable = () => {
 	const [allMedia, setAllMedia] = useState([]);
 
 	useEffect(() => {
-		PublisherService.getAllMedia(setAllMedia);
+		getAllMedia(setAllMedia);
 	}, []);
 
 	let carousel;
