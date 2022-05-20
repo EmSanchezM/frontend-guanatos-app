@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { AddIcon } from '../../components/Icons';
+import { PlusIcon } from '../../components/Icons';
 import MediaTable from './Table/MediaTable';
 
 const VariantMediaCrud = () => {
@@ -13,7 +13,7 @@ const VariantMediaCrud = () => {
 					to='/publicist/media/new'
 					className='flex items-center lg:mr-4 px-4 py-2 border-2 border-primary-200 rounded-sm'
 				>
-					<AddIcon className='w-5 h-5 text-primary-200' />
+					<PlusIcon className='w-5 h-5 text-primary-200' />
 					<span className='font-bold hidden '>Add Video or Images Files</span>
 				</Link>
 			</div>

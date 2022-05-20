@@ -148,6 +148,7 @@ export {
 	getCarousel,
 	getGallery,
 	getMultimedia,
+	getAllMedia,
 	postAllMedia,
 	deleteMedia,
 	postCarousel,

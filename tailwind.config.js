@@ -3,6 +3,12 @@ const colors = require('tailwindcss/colors');
 module.exports = {
 	content: ['./src/**/*.{js,jsx}'],
 	theme: {
+		screens: {
+			sm: '480px',
+			md: '768px',
+			lg: '976px',
+			xl: '1440px'
+		},
 		extend: {
 			width: {
 				'1/9': '90%'
@@ -38,5 +44,5 @@ module.exports = {
 			pink: colors.pink
 		}
 	},
-	plugins: []
+	plugins: [require('@tailwindcss/aspect-ratio')]
 };
