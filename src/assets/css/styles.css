@@ -502,10 +502,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.75rem;
   margin-right: 0.75rem;
 }
-.mx-7{
-  margin-left: 1.75rem;
-  margin-right: 1.75rem;
-}
 .my-3{
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -786,14 +782,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-evenly{
   justify-content: space-evenly;
 }
-.gap-4{
-  gap: 1rem;
-}
 .gap-2{
   gap: 0.5rem;
 }
 .gap-6{
   gap: 1.5rem;
+}
+.gap-4{
+  gap: 1rem;
 }
 .space-x-6 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
@@ -1553,9 +1549,32 @@ Ensure the default browser behavior of the `hidden` attribute.
 	border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-/*.backdrop__video {
-	@apply aspect-w-16 aspect-h-9 block mt-14 mx-auto border-2 border-white;
-}*/
+.backdrop__video{
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+  --tw-aspect-w: 16;
+}
+
+.backdrop__video > *{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.backdrop__video{
+  --tw-aspect-h: 9;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3.5rem;
+  display: block;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
 
 .card{
   margin-bottom: 0.75rem;
@@ -2086,10 +2105,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @media (min-width: 480px){
 
-  .sm\:col-span-2{
-    grid-column: span 2 / span 2;
-  }
-
   .sm\:mx-1{
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -2127,11 +2142,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:col-span-2{
     grid-column: span 2 / span 2;
-  }
-
-  .md\:mx-2{
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
   }
 
   .md\:mx-auto{
@@ -2196,10 +2206,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 976px){
-
-  .lg\:col-span-2{
-    grid-column: span 2 / span 2;
-  }
 
   .lg\:mx-2{
     margin-left: 0.5rem;

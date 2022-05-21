@@ -17,7 +17,5 @@ export const useWeather = ubication => {
 		getWeatherByLocation(ubication, setData, setError);
 	}, []);
 
-	console.log(weather);
-
 	return { weather: weather.data };
 };

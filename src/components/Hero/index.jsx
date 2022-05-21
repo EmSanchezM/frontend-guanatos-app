@@ -1,7 +1,8 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { ArrowLeftIcon, ArrowRightIcon } from '../Icons';
+import HeroItem from './HeroItem';
 
 const HeroSection = ({ slides, showModal }) => {
 	const [current, setCurrent] = useState(0);
@@ -19,6 +20,8 @@ const HeroSection = ({ slides, showModal }) => {
 		return null;
 	}
 
+	if (!slides.length) return <p>No hay data</p>;
+
 	return (
 		<AnimatePresence>
 			{!showModal && (
@@ -28,47 +31,9 @@ const HeroSection = ({ slides, showModal }) => {
 				</>
 			)}
 
-			{slides.length ? (
-				slides.map((slide, index) => {
-					return (
-						<div key={index}>
-							{index === current && (
-								<section className='hero__section'>
-									<div>
-										{slide.file.mimetype.includes('image') ? (
-											<motion.img
-												src={slide.file.url}
-												alt='restaurant'
-												className='w-full bg-cover bg-center h-96 object-fill animate__animated animate__fadeIn'
-												initial={{ x: 300, opacity: 0 }}
-												animate={{ x: 0, opacity: 1 }}
-												exit={{ x: -300, opacity: 0 }}
-											/>
-										) : (
-											<motion.video
-												controls
-												autoPlay
-												src={slide.file.url}
-												className='backdrop__video'
-												initial={{ x: 300, opacity: 0 }}
-												animate={{ x: 0, opacity: 1 }}
-												exit={{ x: -300, opacity: 0 }}
-											/>
-										)}
-									</div>
-									<div className='mt-4 md:px-2 lg:w-1/3'>
-										<span className='hero__shortMessage'>{slide.badge}</span>
-										<h1 className='hero__title'>{slide.title}</h1>
-										<p className='hero__paragraph'>{slide.description}</p>
-									</div>
-								</section>
-							)}
-						</div>
-					);
-				})
-			) : (
-				<p>No hay data</p>
-			)}
+			{slides.map((slide, index) => (
+				<HeroItem slide={slide} index={index} />
+			))}
 		</AnimatePresence>
 	);
 };

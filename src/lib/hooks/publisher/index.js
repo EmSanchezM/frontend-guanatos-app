@@ -1,23 +1,26 @@
 import { useEffect, useState } from 'react';
-import { getAllMedia, getCarousel } from '../../services/publisher';
+import { getAllMedia } from '../../services/publisher';
+
+const getFilterMedia = media => {
+	let multimedia = media.filter(
+		mediaData => mediaData.section === 'multimedia'
+	);
+
+	let gallery = media.filter(mediaData => mediaData.section === 'gallery');
+
+	let carousel = media.filter(mediaData => mediaData.section === 'carousel');
+
+	return { multimedia, gallery, carousel };
+};
 
 export const useMultimedia = () => {
 	const [media, setMedia] = useState([]);
-	const [carousel, setCarousel] = useState([]);
 
 	useEffect(() => {
 		getAllMedia(setMedia);
 	}, []);
 
-	useEffect(() => {
-		getCarousel(setCarousel);
-	}, []);
+	const { multimedia, gallery, carousel } = getFilterMedia(media);
 
-	let multimedia = media?.filter(
-		mediaData => mediaData.section === 'multimedia'
-	);
-
-	let gallery = media?.filter(mediaData => mediaData.section === 'gallery');
-
-	return { media: multimedia, gallery, carousel };
+	return { multimedia, gallery, carousel };
 };

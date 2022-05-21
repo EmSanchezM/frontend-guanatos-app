@@ -65,64 +65,15 @@ const postContactUs = async contact => {
 	}
 };
 
-const getCarousel = async setCarousel => {
-	try {
-		const response = await Axios.get('/carousel');
-		const { data } = response;
-
-		if (data.status === 'success') {
-			setCarousel(data.data.data);
-		}
-	} catch (error) {
-		console.log('ERROR ', error);
-	}
-};
-
-const getGallery = async setGallery => {
-	try {
-		const response = await Axios.get('/media');
-		const { data } = response;
-
-		if (data.status === 'success') {
-			console.log('data axios ', data.data.data);
-			let Media = data.data.data;
-			let galleryFilter = Media?.filter(media => media.section === 'gallery');
-
-			setGallery(galleryFilter);
-		}
-	} catch (error) {
-		console.log('ERROR ', error);
-	}
-};
-
 const getAllMedia = async setMedia => {
 	try {
 		const response = await Axios.get('/media');
 		const { data } = response;
+		let media = [];
 
 		if (data.status === 'success') {
-			console.log('data axios ', data.data.data);
-			let Media = data.data.data;
-
-			setMedia(Media);
-		}
-	} catch (error) {
-		console.log('ERROR ', error);
-	}
-};
-const getMultimedia = async setMedia => {
-	try {
-		const response = await Axios.get('/media');
-		const { data } = response;
-
-		if (data.status === 'success') {
-			console.log('data axios ', data.data.data);
-			let Media = data.data.data;
-			let variantFilter = Media?.filter(
-				media => media.section === 'multimedia'
-			);
-
-			setMedia(variantFilter);
+			media = data.data.data;
+			setMedia(media);
 		}
 	} catch (error) {
 		console.log('ERROR ', error);
@@ -145,9 +96,6 @@ const deleteMedia = async (idMedia, setMedia) => {
 };
 
 export {
-	getCarousel,
-	getGallery,
-	getMultimedia,
 	getAllMedia,
 	postAllMedia,
 	deleteMedia,

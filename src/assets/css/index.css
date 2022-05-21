@@ -103,9 +103,9 @@
 	@apply block mt-14 mx-auto border-2 border-white;
 }
 
-/*.backdrop__video {
+.backdrop__video {
 	@apply aspect-w-16 aspect-h-9 block mt-14 mx-auto border-2 border-white;
-}*/
+}
 
 .card {
 	@apply overflow-hidden cursor-pointer font-primary rounded-lg shadow-md mb-3;
