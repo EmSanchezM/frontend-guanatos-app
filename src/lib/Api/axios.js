@@ -1,39 +1,37 @@
 import axios from 'axios';
 import { ATHOZ_API_URL } from '../../constants/api';
 
-const baseURL = ATHOZ_API_URL;
-const token = localStorage.getItem('tokenId');
+export default async (path, options = {}) => {
+	const baseURL = ATHOZ_API_URL;
+	const token = localStorage.getItem('tokenId');
 
-let headers = {
-	Authorization: token ? `Bearer ${token}` : null,
-	'Content-Type': 'application/json'
-};
+	let headers = {
+		'Content-Type': 'application/json'
+	};
 
-const Axios = axios.create({
-	baseURL: baseURL,
-	headers
-});
-
-Axios.interceptors.response.use(
-	response => {
-		return response;
-	},
-	async function (error) {
-		if (typeof error.response === 'undefined') {
-			alert(
-				'A server/network error ocurred.' +
-					'Looks like CORS might be the problem. ' +
-					'Sorry about this - we will get it fixed shortly.'
-			);
-			return Promise.reject(error);
-		}
-
-		if (error.response.status === 401) {
-			window.location = '/publicist-login';
-			return Promise.reject(error);
-		}
-		return Promise.reject(error);
+	if (token) {
+		headers['Authorization'] = `Bearer ${token}`;
 	}
-);
 
-export default Axios;
+	try {
+		const response = await axios({
+			...options,
+			url: `${baseURL}${path}`,
+			headers
+		});
+
+		const { data } = response;
+
+		return data;
+	} catch (error) {
+		const { message, request, response } = error;
+		if (response) {
+			const { data } = response;
+			throw data;
+		} else if (request) {
+			throw request;
+		} else {
+			throw message;
+		}
+	}
+};

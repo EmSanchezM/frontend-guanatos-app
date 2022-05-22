@@ -16,11 +16,16 @@ const AuthState = props => {
 
 	const LogIn = async values => {
 		try {
-			const response = await Axios.post('users/login', values);
+			const options = {
+				data: values,
+				method: 'POST'
+			};
+			const response = await Axios('/users/login', options);
+			console.log('LOGIN', response);
 			const { data } = response;
 
 			if (data.status === 'success') {
-				localStorage.setItem('tokenId', data.user.token);
+				localStorage.setItem('tokenId', data.token);
 				dispatch({
 					type: LOGIN_SUCCESS,
 					payload: data
@@ -33,9 +38,21 @@ const AuthState = props => {
 				});
 			}
 		} catch (error) {
+			let message;
+			switch (error.status) {
+				case 500:
+					message = 'Internal Server Error';
+					break;
+				case 401:
+					message = 'Invalid credentials';
+					break;
+				default:
+					message = error.message;
+					console.error('ERROR LOGIN', message);
+			}
 			dispatch({
 				type: LOGIN_ERROR,
-				payload: error
+				payload: message
 			});
 		}
 	};

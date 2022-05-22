@@ -487,6 +487,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .z-1{
   z-index: 1;
 }
+.col-span-2{
+  grid-column: span 2 / span 2;
+}
 .col-span-1{
   grid-column: span 1 / span 1;
 }
@@ -578,12 +581,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-1{
   margin-top: 0.25rem;
 }
-.ml-1{
-  margin-left: 0.25rem;
-}
-.mb-0{
-  margin-bottom: 0px;
-}
 .mb-6{
   margin-bottom: 1.5rem;
 }
@@ -598,6 +595,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mr-4{
   margin-right: 1rem;
+}
+.mb-0{
+  margin-bottom: 0px;
+}
+.ml-1{
+  margin-left: 0.25rem;
 }
 .block{
   display: block;
@@ -695,12 +698,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-6{
   width: 1.5rem;
 }
-.w-10{
-  width: 2.5rem;
-}
-.w-48{
-  width: 12rem;
-}
 .w-2\/3{
   width: 66.666667%;
 }
@@ -709,6 +706,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-1\/4{
   width: 25%;
+}
+.w-48{
+  width: 12rem;
+}
+.w-10{
+  width: 2.5rem;
 }
 .max-w-md{
   max-width: 28rem;
@@ -987,10 +990,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
-.px-8{
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
 .px-6{
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -1006,6 +1005,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .pt-10{
   padding-top: 2.5rem;
@@ -2232,14 +2235,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-right: 1rem;
   }
 
-  .lg\:mx-1{
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
-  }
-
   .lg\:mx-auto{
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .lg\:mx-1{
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
   }
 
   .lg\:mr-4{
@@ -2254,12 +2257,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 0px;
   }
 
-  .lg\:mb-4{
-    margin-bottom: 1rem;
-  }
-
   .lg\:ml-72{
     margin-left: 18rem;
+  }
+
+  .lg\:mb-4{
+    margin-bottom: 1rem;
   }
 
   .lg\:block{
@@ -2280,10 +2283,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:w-1\/2{
     width: 50%;
-  }
-
-  .lg\:grid-cols-3{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:justify-start{

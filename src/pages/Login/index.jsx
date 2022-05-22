@@ -55,9 +55,7 @@ const Login = () => {
 					{!user && error && (
 						<div className='login__alert'>
 							<div className='ml-4'>
-								<span className='login__alert-msg'>
-									Incorrect email or password
-								</span>
+								<span className='login__alert-msg'>{error}</span>
 							</div>
 						</div>
 					)}

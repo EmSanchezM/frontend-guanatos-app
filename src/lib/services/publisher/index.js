@@ -5,7 +5,12 @@ const postAllMedia = async media => {
 	console.log('MEDIA FORM ', media);
 
 	try {
-		const response = await Axios.post('/media', media);
+		const options = {
+			data: media,
+			method: 'POST'
+		};
+
+		const response = await Axios('/media', options);
 		const { data } = response;
 
 		if (data.status === 'success') {
@@ -13,22 +18,29 @@ const postAllMedia = async media => {
 		}
 	} catch (error) {
 		console.log('ERROR ', error);
-		const { message, request, response } = error;
-		if (response) {
-			const { data } = response;
-			throw data;
-		} else if (request) {
-			throw request;
-		} else {
-			toast.error('ERROR ADDING GALLERY');
-			throw message;
+		let message;
+		switch (error.status) {
+			case 500:
+				message = 'Internal Server Error';
+				break;
+			case 401:
+				message = 'Invalid credentials';
+				break;
+			default:
+				message = error.message;
+				console.error(message);
+				toast.error('ERROR ADDING GALLERY');
 		}
 	}
 };
 
 const postCarousel = async carousel => {
 	try {
-		const response = await Axios.post('/media', carousel);
+		const options = {
+			data: carousel,
+			method: 'POST'
+		};
+		const response = await Axios('/media', options);
 		const { data } = response;
 
 		if (data.status === 'success') {
@@ -36,22 +48,30 @@ const postCarousel = async carousel => {
 		}
 	} catch (error) {
 		console.log('ERROR ', error);
-		const { message, request, response } = error;
-		if (response) {
-			const { data } = response;
-			throw data;
-		} else if (request) {
-			throw request;
-		} else {
-			toast.error('ERROR ADDING SLIDE');
-			throw message;
+		let message;
+		switch (error.status) {
+			case 500:
+				message = 'Internal Server Error';
+				break;
+			case 401:
+				message = 'Invalid credentials';
+				break;
+			default:
+				message = error.message;
+				console.error(message);
+				toast.error('ERROR ADDING SLIDE');
 		}
 	}
 };
 
 const postEmployment = async employment => {
 	try {
-		const response = await Axios.post('/employment', employment);
+		const options = {
+			data: employment,
+			method: 'POST'
+		};
+
+		const response = await Axios('/employment', options);
 		const { data } = response;
 
 		if (data.status === 'success') {
@@ -60,70 +80,82 @@ const postEmployment = async employment => {
 		}
 	} catch (error) {
 		console.log('ERROR ', error);
-		const { message, request, response } = error;
-		if (response) {
-			const { data } = response;
-			throw data;
-		} else if (request) {
-			throw request;
-		} else {
-			toast.error('ERROR ADDING APPLICATION');
-			throw message;
+		let message;
+		switch (error.status) {
+			case 500:
+				message = 'Internal Server Error';
+				break;
+			case 401:
+				message = 'Invalid credentials';
+				break;
+			default:
+				message = error.message;
+				console.error(message);
+				toast.error('ERROR ADDING APPLICATION');
 		}
 	}
 };
 
 const postContactUs = async contact => {
 	try {
-		const response = await Axios.post('/contact', contact);
+		const options = {
+			data: contact,
+			method: 'POST'
+		};
+		const response = await Axios('/contact', options);
 		const { data } = response;
 
 		if (data.status === 'success') {
-			console.log(data.status);
 			toast.success('WE WILL GET IN TOUCH WITH YOU');
 		}
 	} catch (error) {
 		console.log('ERROR ', error);
-		const { message, request, response } = error;
-		if (response) {
-			const { data } = response;
-			throw data;
-		} else if (request) {
-			throw request;
-		} else {
-			toast.error('ERROR IN CONTACT US SECTION');
-			throw message;
+		let message;
+		switch (error.status) {
+			case 500:
+				message = 'Internal Server Error';
+				break;
+			case 401:
+				message = 'Invalid credentials';
+				break;
+			default:
+				message = error.message;
+				console.error(message);
+				toast.error('ERROR IN CONTACT US SECTION');
 		}
 	}
 };
 
 const getAllMedia = async setMedia => {
 	try {
-		const response = await Axios.get('/media');
+		const options = { method: 'GET' };
+		const response = await Axios('/media', options);
 		const { data } = response;
-		let media = [];
 
 		if (data.status === 'success') {
-			media = data.data.data;
-			setMedia(media);
+			setMedia(data.data);
 		}
 	} catch (error) {
-		const { message, request, response } = error;
-		if (response) {
-			const { data } = response;
-			throw data;
-		} else if (request) {
-			throw request;
-		} else {
-			console.error(message);
-			throw message;
+		console.log('ERROR ', error);
+		let message;
+		switch (error.status) {
+			case 500:
+				message = 'Internal Server Error';
+				break;
+			case 401:
+				message = 'Invalid credentials';
+				break;
+			default:
+				message = error.message;
+				console.error('ERROR ALL MEDIA METHOD', message);
 		}
 	}
 };
 
 const deleteMedia = async (idMedia, setMedia) => {
 	try {
-		const response = await Axios.delete(`/media/${idMedia}`);
+		const options = { method: 'DELETE' };
+		const response = await Axios(`/media/${idMedia}`, options);
 		const { data } = response;
 
 		if (data.status === 'success') {
@@ -132,15 +164,18 @@ const deleteMedia = async (idMedia, setMedia) => {
 		}
 	} catch (error) {
 		console.log('ERROR ', error);
-		const { message, request, response } = error;
-		if (response) {
-			const { data } = response;
-			throw data;
-		} else if (request) {
-			throw request;
-		} else {
-			toast.error('ERROR DELETING FILE');
-			throw message;
+		let message;
+		switch (error.status) {
+			case 500:
+				message = 'Internal Server Error';
+				break;
+			case 401:
+				message = 'Invalid credentials';
+				break;
+			default:
+				message = error.message;
+				console.error(message);
+				toast.error('ERROR DELETING FILE');
 		}
 	}
 };
