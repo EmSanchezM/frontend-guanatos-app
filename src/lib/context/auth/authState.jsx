@@ -21,14 +21,12 @@ const AuthState = props => {
 				method: 'POST'
 			};
 			const response = await Axios('/users/login', options);
-			console.log('LOGIN', response);
-			const { data } = response;
 
-			if (data.status === 'success') {
-				localStorage.setItem('tokenId', data.token);
+			if (response.status === 'success') {
+				localStorage.setItem('tokenId', response.token);
 				dispatch({
 					type: LOGIN_SUCCESS,
-					payload: data
+					payload: response
 				});
 			}
 		} catch (error) {

@@ -1,6 +1,6 @@
 /*Managment state form*/
 import { Form, Formik } from 'formik';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Input } from '../../components/Form';
@@ -28,21 +28,17 @@ const Login = () => {
 		submitProps.setSubmitting(false);
 		submitProps.resetForm();
 
-		if (user) {
-			navigate('publicist/start');
-		}
-
 		setUserAuth({
 			email: '',
 			password: ''
 		});
 	};
 
-	/*useEffect(() => {
+	useEffect(() => {
 		if (user) {
-			navigate('publicist/start');
+			navigate('publicist/start', { replace: true });
 		}
-	}, [user]);*/
+	}, [user]);
 
 	return (
 		<section className='login__container'>
