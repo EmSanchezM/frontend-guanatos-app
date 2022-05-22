@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Loader from '../../../components/Loader';
 import { getAllMedia } from '../../../lib/services/publisher';
 import MediaRow from './MediaRow';
 
@@ -10,13 +9,8 @@ const MediaTable = () => {
 		getAllMedia(setAllMedia);
 	}, []);
 
-	let gallerys;
-
-	if (allMedia.length) {
-		gallerys = allMedia.map(media => (
-			<MediaRow key={allMedia._id} media={media} setAllMedia={setAllMedia} />
-		));
-	}
+	if (!allMedia.length)
+		return <p className='flex justify-center font-bold'>There are not data</p>;
 
 	return (
 		<>
@@ -30,13 +24,13 @@ const MediaTable = () => {
 					</tr>
 				</thead>
 				<tbody className='border-2 border-primary-200'>
-					{gallerys ? (
-						gallerys
-					) : (
-						<span className='text-center'>
-							<Loader className='w-5 h-5' />
-						</span>
-					)}
+					{allMedia.map(media => (
+						<MediaRow
+							key={allMedia._id}
+							media={media}
+							setAllMedia={setAllMedia}
+						/>
+					))}
 				</tbody>
 			</table>
 		</>

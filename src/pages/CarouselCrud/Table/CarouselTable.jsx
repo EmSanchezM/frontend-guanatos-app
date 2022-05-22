@@ -10,7 +10,9 @@ const CarouselTable = () => {
 	}, []);
 
 	if (!allMedia.length)
-		return <span className='flex justify-center'>No hay data</span>;
+		return (
+			<span className='flex justify-center font-bold'>There are no data</span>
+		);
 
 	return (
 		<>

@@ -11,7 +11,7 @@ export const getBranches = async setBranches => {
 
 		const { data } = response;
 
-		if (data.status === 'success') {
+		if (response.status === 'success') {
 			setBranches(data.data);
 		}
 	} catch (error) {
@@ -25,7 +25,7 @@ export const getBranches = async setBranches => {
 				break;
 			default:
 				message = error.message;
-				console.error('ERROR GET BRANCHES METHOD', message);
+				console.error(`ERROR: ${message}`);
 		}
 	}
 };

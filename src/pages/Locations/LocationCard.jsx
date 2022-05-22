@@ -1,21 +1,16 @@
 import PropTypes from 'prop-types';
 
-const LocationCard = ({ branch }) => {
-	console.log('data card', branch);
-
-	//if (!branch.length) return <p>No hay location</p>;
-	const { address } = branch;
-
+const LocationCard = ({ address, name, phones }) => {
 	return (
 		<article className='border-2 rounded-md mb-2 mx-2 mt-2'>
 			<div className='flex justify-between mx-4'>
 				<h3 className='text-2xl font-semibold font-primary'>
-					{branch.name || 'Guanatos Tacos'}
+					{name || 'Guanatos Tacos'}
 				</h3>
 			</div>
 			<hr className='border-1 border-gray-200' />
 			<br />
-			<span className='font-bold mx-2'>Phone: {branch.phones}</span>
+			<span className='font-bold mx-2'>Phone: {phones}</span>
 			<div className='flex py-4 px-2'>
 				<ul>
 					<li>{address.street}</li>
@@ -37,5 +32,7 @@ const LocationCard = ({ branch }) => {
 export default LocationCard;
 
 LocationCard.propTypes = {
-	location: PropTypes.object.isRequired
+	address: PropTypes.object.isRequired,
+	name: PropTypes.string,
+	phones: PropTypes.array
 };

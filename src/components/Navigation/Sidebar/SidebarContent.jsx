@@ -5,9 +5,7 @@ const SidebarContent = () => {
 	return (
 		<div className='py-4 text-gray-500'>
 			<div className='flex'>
-				<span className='ml-6 mr-4 text-lg font-bold text-gray-800'>
-					GUANATOS ADMIN
-				</span>
+				<span className='ml-6 mr-4 text-lg font-bold'>GUANATOS ADMIN</span>
 			</div>
 			<div className='flex flex-col mt-6'>
 				<Link
