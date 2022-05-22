@@ -18,8 +18,6 @@ const GalleryForm = () => {
 		imageSix: ''
 	});
 
-	const [, setAllMedia] = useState([]);
-
 	const handleSubmit = (values, submitProps) => {
 		const formData = new FormData();
 		let files = [];
@@ -30,7 +28,8 @@ const GalleryForm = () => {
 		formData.append('section', 'gallery');
 		formData.append('files', files);
 
-		postAllMedia(formData, setAllMedia, navigate, '/publicist/gallery');
+		postAllMedia(formData);
+		navigate('/publicist/gallery');
 
 		submitProps.setSubmitting(false);
 		submitProps.resetForm();

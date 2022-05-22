@@ -3,30 +3,16 @@ import { Outlet } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Dropdown from '../components/Navigation/Dropdown';
 import Navbar from '../components/Navigation/Navbar';
+import { useUbication } from '../lib/hooks/ubication';
 
-const HomeRoutes = ({ ubication, setUbication }) => {
+const HomeRoutes = () => {
 	const [isOpen, setIsOpen] = useState(false);
+
+	const { ubication } = useUbication();
 
 	const toggle = () => {
 		setIsOpen(!isOpen);
 	};
-
-	useEffect(() => {
-		navigator.geolocation.getCurrentPosition(
-			function (position) {
-				setUbication({
-					lng: position.coords.longitude,
-					lat: position.coords.latitude
-				});
-			},
-			function (error) {
-				console.error('ERROR Code ' + error.code + ' - ' + error.message);
-			},
-			{
-				enableHighAccuracy: true
-			}
-		);
-	}, []);
 
 	useEffect(() => {
 		const hideMenu = () => {

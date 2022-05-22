@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import About from '../pages/About';
 import CarouselCrud from '../pages/CarouselCrud';
@@ -16,30 +15,17 @@ import HomeRoutes from './HomeRoutes';
 import PublicistRoutes from './PublicistRoutes';
 
 const AppRouter = () => {
-	const [ubication, setUbication] = useState({
-		lng: 0,
-		lat: 0
-	});
-
 	return (
 		<div className='pattern__background'>
 			<Routes>
 				<Route path='/publicist-login' element={<Login />} />
-				<Route
-					path='/'
-					element={
-						<HomeRoutes ubication={ubication} setUbication={setUbication} />
-					}
-				>
+				<Route path='/' element={<HomeRoutes />}>
 					<Route index path='/' element={<Home />} />
 					<Route path='/about-us' element={<About />} />
 					<Route path='/contact-us' element={<ContactUs />} />
 					<Route path='/menu' element={<Menu />} />
 					<Route path='/work-with-us' element={<Employment />} />
-					<Route
-						path='/locations'
-						element={<Locations ubication={ubication} />}
-					/>
+					<Route path='/locations' element={<Locations />} />
 				</Route>
 				<Route path='/publicist' element={<PublicistRoutes />}>
 					<Route index path='/publicist/start' element={<CarouselCrud />} />

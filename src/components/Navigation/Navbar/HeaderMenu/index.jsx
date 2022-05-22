@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo/logo.png';
-import { MenuBarIcon } from '../../Icons';
+import logo from '../../../../assets/logo/logo.png';
+import { MenuBarIcon } from '../../../Icons';
 
 const HeaderMenu = ({ toogle, t }) => (
 	<header className='header' role='navigation'>

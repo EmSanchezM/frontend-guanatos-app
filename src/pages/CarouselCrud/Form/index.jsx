@@ -1,35 +1,26 @@
 import { Form, Formik } from 'formik';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import * as Yup from 'yup';
-import { Input, InputFileWithoutPreview } from '../../../components/Form';
+import { InputFileWithoutPreview } from '../../../components/Form';
 import { postCarousel } from '../../../lib/services/publisher';
 
 const FormCarousel = () => {
 	const navigate = useNavigate();
 
 	const [formCarousel, setFormCarousel] = useState({
-		title: '',
-		badge: '',
-		description: '',
 		file: null
 	});
 
-	const validationSchema = Yup.object().shape({
-		title: Yup.string().required('Required'),
-		badge: Yup.string().required('Required'),
-		description: Yup.string().required('Required')
-	});
-
 	const handleSubmit = values => {
-		//console.log( values );
-		postCarousel(values);
+		const formData = new FormData();
+		console.log(values.file);
+		formData.append('section', 'carousel');
+		formData.append('file', values.file);
+
+		postCarousel(formData);
 		navigate('/publicist/start');
 
 		setFormCarousel({
-			title: '',
-			badge: '',
-			description: '',
 			file: null
 		});
 	};
@@ -40,42 +31,9 @@ const FormCarousel = () => {
 				Add New Slide to Carousel
 			</h2>
 			<hr />
-			<Formik
-				initialValues={formCarousel}
-				validationSchema={validationSchema}
-				onSubmit={handleSubmit}
-			>
+			<Formik initialValues={formCarousel} onSubmit={handleSubmit}>
 				<Form className='w-full'>
-					<div className='flex flex-wrap mt-4 -mx-3 px-2'>
-						<div className='w-full md:w-1/2 px-3 mb-5'>
-							<Input
-								type='text'
-								label='title'
-								id='title'
-								name='title'
-								placeholder='title'
-							/>
-						</div>
-						<div className='w-full md:w-1/2 px-3 mb-5'>
-							<Input
-								type='text'
-								label='badge'
-								name='badge'
-								id='badge'
-								placeholder='badge'
-							/>
-						</div>
-					</div>
 					<div className='flex flex-wrap -mx-3 px-2'>
-						<div className='w-full md:w-1/2 px-3 mb-5'>
-							<Input
-								type='text'
-								label='Description'
-								name='description'
-								id='description'
-								placeholder='description'
-							/>
-						</div>
 						<div className='w-full md:w-1/2 px-3 mb-5'>
 							<InputFileWithoutPreview
 								type='file'

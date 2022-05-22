@@ -1,66 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useUbication } from '../../lib/hooks/ubication';
 import { getBranches } from '../../lib/services/branches';
 import LocationCard from './LocationCard';
 import LocationMap from './LocationMap';
 
-/*
-const locations = [
-    {
-        id: '1asd',
-        title: 'Redlands Blvd',
-        schedule: "Open'Til 4 PM", 
-        street: '27521 San Nernandino Av',
-        direction: 'Redlands CA, USA',
-        phone: '(909) 557-2220',
-        distance: '2391 mi'
-    },
-    {
-        id: '2asdf',
-        title: 'Moreno Valley',
-        schedule: "Open'Til 4 PM", 
-        street: '12860 Day Street. Moreno',
-        direction: 'Valley, CA 92553, USA',
-        phone: '(951697-0390)',
-        distance: '2399 mi'
-    },
-    {
-        id: '3asdfg',
-        title: 'Grimmer Blvd',
-        schedule: "Open'Til 4 PM", 
-        street: 'Address Street',
-        direction: '160-161 North Street',
-        phone: 'Brighton',
-        distance: 'BN1 1EZ'
-    },
-    {
-        id: '4asdfgh',
-        title: 'Grimmer Blvd',
-        schedule: "Open'Til 4 PM", 
-        street: 'Address Street',
-        direction: '160-161 North Street',
-        phone: 'Brighton',
-        distance: 'BN1 1EZ'
-    },
-    {
-        id: '5asdfghi',
-        schedule: "Open'Til 4 PM", 
-        title: 'Grimmer Blvd',
-        street: 'Address Street',
-        direction: '160-161 North Street',
-        phone: 'Brighton',
-        distance: 'BN1 1EZ'
-    },
-    {
-        id: '6asdfghij',
-        title: 'Grimmer Blvd',
-        schedule: "Open'Til 4 PM", 
-        street: 'Address Street',
-        direction: '160-161 North Street',
-        phone: 'Brighton',
-        distance: 'BN1 1EZ'
-    },
-]
-*/
 /**
  * <ModalMap showMap={showMap} setShowMap={setShowMap} />
 
@@ -77,12 +20,12 @@ const locations = [
             </div>
             <div>
                 <h2 className='font-bold text-2xl my-2 text-center'>All Locations</h2>
-                <div className="grid grid-cols-1 gap-2 lg:grid-cols-3 my-2">
+                <div className="gr_id gr_id-cols-1 gap-2 lg:gr_id-cols-3 my-2">
                     {
                         locations.map(location=>{
                             return (
                                 <LocationCard 
-                                    key={location.id} 
+                                    key={location._id} 
                                     location={location} 
                                     setShowMap={setShowMap}
                                 />
@@ -95,24 +38,28 @@ const locations = [
  * 
  */
 
-const Locations = ({ ubication }) => {
+const Locations = () => {
 	const [branches, setBranches] = useState([]);
+
+	const { ubication } = useUbication();
 
 	useEffect(() => {
 		getBranches(setBranches);
 	}, []);
 
+	console.log(branches);
+
 	return (
 		<section className='flex justify-center lg:justify-start w-1/9 mx-auto font-primary'>
 			<div className='lg:w-1/3'>
 				<div className='overflow-y-scroll px-3 mx-3'>
-					{allBranches.map(location => (
-						<LocationCard key={location._id} location={location} />
+					{branches.map(branch => (
+						<LocationCard key={branch._id} branch={branch} />
 					))}
 				</div>
 			</div>
 			<div className='hidden lg:block lg:my-12 lg:mx-4'>
-				<LocationMap ubication={ubication} allBranches={branches} />
+				<LocationMap ubication={ubication} branches={branches} />
 			</div>
 		</section>
 	);

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Loader from '../../../components/Loader';
 import { getAllMedia } from '../../../lib/services/publisher';
 import CarouselRow from './CarouselRow';
 
@@ -10,13 +9,8 @@ const CarouselTable = () => {
 		getAllMedia(setAllMedia);
 	}, []);
 
-	let carousel;
-
-	if (allMedia.length) {
-		carousel = allMedia.map(media => (
-			<CarouselRow key={allMedia._id} media={media} setAllMedia={setAllMedia} />
-		));
-	}
+	if (!allMedia.length)
+		return <span className='flex justify-center'>No hay data</span>;
 
 	return (
 		<>
@@ -31,13 +25,13 @@ const CarouselTable = () => {
 					</tr>
 				</thead>
 				<tbody className='border-2 border-primary-200'>
-					{carousel ? (
-						carousel
-					) : (
-						<span className='text-center'>
-							<Loader className='w-5 h-5' />
-						</span>
-					)}
+					{allMedia.map(media => (
+						<CarouselRow
+							key={allMedia._id}
+							media={media}
+							setAllMedia={setAllMedia}
+						/>
+					))}
 				</tbody>
 			</table>
 		</>

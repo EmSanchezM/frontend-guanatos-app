@@ -9,13 +9,11 @@ const stylesMap = {
 	margin: '20px'
 };
 
-const LocationMap = ({ ubication, allBranches }) => {
+const LocationMap = ({ ubication, branches }) => {
 	const centerPosition = {
 		lat: ubication.lat || 34.5863439,
 		lng: ubication.lng || -111.8035
 	};
-
-	console.log('ubication ', ubication);
 
 	const [originPositions, setOriginPositions] = useState([
 		[{ lat: ubication.lat, lng: ubication.lng }, 'Your Location']
@@ -32,7 +30,7 @@ const LocationMap = ({ ubication, allBranches }) => {
 
 	return (
 		<LoadScript
-			googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAP_KEY}
+			googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_KEY}
 			language='en'
 		>
 			<GoogleMap

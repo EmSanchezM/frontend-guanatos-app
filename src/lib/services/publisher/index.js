@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import Axios from '../../Api/axios';
 
-const postAllMedia = async (media, setMedia, navigate, path) => {
+const postAllMedia = async media => {
 	console.log('MEDIA FORM ', media);
 
 	try {
@@ -9,9 +9,6 @@ const postAllMedia = async (media, setMedia, navigate, path) => {
 		const { data } = response;
 
 		if (data.status === 'success') {
-			console.log(data.status);
-			await getAllMedia(setMedia);
-			navigate(path);
 			toast.success('GALLERY ADDED SUCCESFULLY');
 		}
 	} catch (error) {
@@ -22,11 +19,10 @@ const postAllMedia = async (media, setMedia, navigate, path) => {
 
 const postCarousel = async carousel => {
 	try {
-		const response = await Axios.post('/carousel', carousel);
+		const response = await Axios.post('/media', carousel);
 		const { data } = response;
 
 		if (data.status === 'success') {
-			console.log(data.status);
 			toast.success('SLIDE ADDED SUCCESFULLY');
 		}
 	} catch (error) {

@@ -6,7 +6,6 @@ export const getBranches = async setBranches => {
 		const { data } = response;
 
 		if (data.status === 'success') {
-			console.log('data axios ', data.data.data);
 			setBranches(data.data.data);
 		}
 	} catch (error) {
