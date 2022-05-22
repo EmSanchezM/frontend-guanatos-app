@@ -30,12 +30,6 @@ const AuthState = props => {
 					type: LOGIN_SUCCESS,
 					payload: data
 				});
-			} else {
-				console.log('data error ', data);
-				dispatch({
-					type: LOGIN_ERROR,
-					payload: data
-				});
 			}
 		} catch (error) {
 			let message;
