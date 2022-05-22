@@ -1,14 +1,12 @@
 /*Managment state form*/
 import { Form, Formik } from 'formik';
-import { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Input } from '../../components/Form';
 import authContext from '../../lib/context/auth/authContext';
 
 const Login = () => {
-	const navigate = useNavigate();
-
 	const AuthContext = useContext(authContext);
 	const { authenticated, error, LogIn, user } = AuthContext;
 
@@ -34,12 +32,6 @@ const Login = () => {
 		});
 	};
 
-	useEffect(() => {
-		if (user) {
-			navigate('publicist/start', { replace: true });
-		}
-	}, [user]);
-
 	return (
 		<section className='login__container'>
 			<header className='login__header'>
@@ -55,6 +47,7 @@ const Login = () => {
 							</div>
 						</div>
 					)}
+					{user && <Navigate to='/publicist/start' replace={true} />}
 				</div>
 				<div className='mt-10 my-4'>
 					<div className='flex flex-col'>

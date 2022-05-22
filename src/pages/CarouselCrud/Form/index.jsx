@@ -13,7 +13,7 @@ const FormCarousel = () => {
 
 	const handleSubmit = values => {
 		const formData = new FormData();
-		console.log(values.file);
+		console.log('FILE CAROUSEL ', values.file);
 		formData.append('section', 'carousel');
 		formData.append('file', values.file);
 

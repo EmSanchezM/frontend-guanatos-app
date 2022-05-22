@@ -26,7 +26,9 @@ const GalleryForm = () => {
 		}
 
 		formData.append('section', 'gallery');
-		formData.append('files', files);
+		files.forEach(file => {
+			formData.append('file', file);
+		});
 
 		postAllMedia(formData);
 		navigate('/publicist/gallery');
