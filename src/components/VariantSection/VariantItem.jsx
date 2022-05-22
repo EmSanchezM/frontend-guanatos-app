@@ -22,7 +22,9 @@ const VariantItem = ({
 		<motion.article
 			key={media._id}
 			className={
-				fullWidth ? 'col-span-2 w-full cursor-pointer' : 'w-full cursor-pointer'
+				fullWidth
+					? 'md:col-span-2 w-full cursor-pointer'
+					: 'w-full cursor-pointer'
 			}
 			layout
 			whileHover={{ opacity: 1 }}

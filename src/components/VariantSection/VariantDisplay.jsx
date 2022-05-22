@@ -13,7 +13,7 @@ const VariantDisplay = ({ media }) => {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 1 }}
-					className='w-full h-96'
+					className='w-full h-96 shadow-lg'
 				/>
 				<span className='absolute'>
 					<PlayIcon className='w-24 h-24 text-white' />
