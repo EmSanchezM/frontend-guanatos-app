@@ -9,6 +9,15 @@ export const getBranches = async setBranches => {
 			setBranches(data.data.data);
 		}
 	} catch (error) {
-		console.error(error);
+		const { message, request, response } = error;
+		if (response) {
+			const { data } = response;
+			throw data;
+		} else if (request) {
+			throw request;
+		} else {
+			console.error(message);
+			throw message;
+		}
 	}
 };

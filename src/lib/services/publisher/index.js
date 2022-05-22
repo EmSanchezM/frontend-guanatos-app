@@ -13,7 +13,16 @@ const postAllMedia = async media => {
 		}
 	} catch (error) {
 		console.log('ERROR ', error);
-		toast.error('ERROR ADDING GALLERY');
+		const { message, request, response } = error;
+		if (response) {
+			const { data } = response;
+			throw data;
+		} else if (request) {
+			throw request;
+		} else {
+			toast.error('ERROR ADDING GALLERY');
+			throw message;
+		}
 	}
 };
 
@@ -27,7 +36,16 @@ const postCarousel = async carousel => {
 		}
 	} catch (error) {
 		console.log('ERROR ', error);
-		toast.error('ERROR ADDING SLIDE');
+		const { message, request, response } = error;
+		if (response) {
+			const { data } = response;
+			throw data;
+		} else if (request) {
+			throw request;
+		} else {
+			toast.error('ERROR ADDING SLIDE');
+			throw message;
+		}
 	}
 };
 
@@ -42,7 +60,16 @@ const postEmployment = async employment => {
 		}
 	} catch (error) {
 		console.log('ERROR ', error);
-		toast.error('ERROR ADDING APPLICATION');
+		const { message, request, response } = error;
+		if (response) {
+			const { data } = response;
+			throw data;
+		} else if (request) {
+			throw request;
+		} else {
+			toast.error('ERROR ADDING APPLICATION');
+			throw message;
+		}
 	}
 };
 
@@ -57,7 +84,16 @@ const postContactUs = async contact => {
 		}
 	} catch (error) {
 		console.log('ERROR ', error);
-		toast.error('ERROR IN CONTACT US SECTION');
+		const { message, request, response } = error;
+		if (response) {
+			const { data } = response;
+			throw data;
+		} else if (request) {
+			throw request;
+		} else {
+			toast.error('ERROR IN CONTACT US SECTION');
+			throw message;
+		}
 	}
 };
 
@@ -72,7 +108,16 @@ const getAllMedia = async setMedia => {
 			setMedia(media);
 		}
 	} catch (error) {
-		console.log('ERROR ', error);
+		const { message, request, response } = error;
+		if (response) {
+			const { data } = response;
+			throw data;
+		} else if (request) {
+			throw request;
+		} else {
+			console.error(message);
+			throw message;
+		}
 	}
 };
 
@@ -87,7 +132,16 @@ const deleteMedia = async (idMedia, setMedia) => {
 		}
 	} catch (error) {
 		console.log('ERROR ', error);
-		toast.error('ERROR DELETING FILE');
+		const { message, request, response } = error;
+		if (response) {
+			const { data } = response;
+			throw data;
+		} else if (request) {
+			throw request;
+		} else {
+			toast.error('ERROR DELETING FILE');
+			throw message;
+		}
 	}
 };
 

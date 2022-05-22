@@ -20,7 +20,7 @@ const AuthState = props => {
 			const { data } = response;
 
 			if (data.status === 'success') {
-				localStorage.setItem('tokenId', data.token);
+				localStorage.setItem('tokenId', data.user.token);
 				dispatch({
 					type: LOGIN_SUCCESS,
 					payload: data
