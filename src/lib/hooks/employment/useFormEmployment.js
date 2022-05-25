@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
 import * as Yup from 'yup';
-import { getPositions } from '../../services/positions';
+import { getJobs } from '../../services/positions';
 import { postEmployment } from '../../services/publisher';
 
 export const useFormEmployment = () => {
-	const [positions, setPositions] = useState([]);
+	const [jobs, setJobs] = useState([]);
 
 	useEffect(() => {
-		getPositions(setPositions);
+		getJobs(setJobs);
 	}, []);
+
+	console.log(jobs);
 
 	const initialValues = {
 		fullName: '',
@@ -50,6 +52,6 @@ export const useFormEmployment = () => {
 		initialValues,
 		validationSchema,
 		handleSubmit,
-		positions
+		positions: jobs
 	};
 };

@@ -1,18 +1,19 @@
 import Axios from '../../Api/axios';
+import { jobsMapper } from '../../mappers/jobs.mapper';
 
-export const getPositions = async setPositions => {
+export const getJobs = async setPositions => {
 	try {
 		const options = { method: 'GET' };
-		const response = await Axios(
-			'/position?publish[eq]=true&&active=true',
-			options
-		);
-		console.log('response positions', response);
+		const response = await Axios('/jobs?active[eq]=true', options);
 		const { data } = response;
 
-		if (data.status === 'success') {
-			console.log('data axios ', data.data.data);
-			setPositions(data.data.data);
+		if (response.status === 'success') {
+			const jobsData = [...data.data];
+			let jobs = [];
+			
+			jobs = jobsData.map(job=> jobsMapper(job));
+			
+			setPositions(jobs);
 		}
 	} catch (error) {
 		let message;
