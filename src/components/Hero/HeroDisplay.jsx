@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion';
+
 const HeroDisplay = ({ slide }) => {
-	const { url } = slide.file;
+	const { url, mimetype } = slide.file;
 
 	if (mimetype.includes('image'))
 		return (

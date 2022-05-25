@@ -4,10 +4,7 @@ export const getBranches = async setBranches => {
 	try {
 		const options = { method: 'GET' };
 
-		const response = await Axios(
-			'/branch?publish[eq]=true&&active=true',
-			options
-		);
+		const response = await Axios('/branch?active=true', options);
 
 		const { data } = response;
 
@@ -29,3 +26,4 @@ export const getBranches = async setBranches => {
 		}
 	}
 };
+//publish[eq]=true&&

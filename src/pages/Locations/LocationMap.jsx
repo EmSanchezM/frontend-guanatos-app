@@ -1,7 +1,5 @@
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import { useState } from 'react';
-
-/*TODO: DirectionsRenderer*/
+import { useGoogleMap } from '../../lib/hooks/ubication';
 
 const stylesMap = {
 	height: '70vh',
@@ -9,19 +7,13 @@ const stylesMap = {
 	margin: '20px'
 };
 
-const LocationMap = ({ ubication, branches }) => {
-	const centerPosition = {
-		lat: ubication.lat || 34.5863439,
-		lng: ubication.lng || -111.8035
-	};
-
-	const [originPositions, setOriginPositions] = useState([
-		[{ lat: ubication.lat, lng: ubication.lng }, 'Your Location']
-	]);
-
-	const [destinationsPositions, setDestinationsPositions] = useState([
-		[{ lat: 34.5863439, lng: -118.1418195 }, 'Palmdale']
-	]);
+const LocationMap = ({ branches, ubication }) => {
+	const {
+		centerPosition,
+		originPositions,
+		destinationsPositions,
+		setDestinationsPositions
+	} = useGoogleMap(branches, ubication);
 
 	const onLoad = marker => {
 		console.log('marker ', marker);
@@ -43,7 +35,7 @@ const LocationMap = ({ ubication, branches }) => {
 						onLoad={onLoad}
 						position={position}
 						title={`${i + 1}. ${title}`}
-						label={`${i + 1}`}
+						label={`${i + 1}${title}`}
 					/>;
 				})}
 
@@ -52,7 +44,7 @@ const LocationMap = ({ ubication, branches }) => {
 						onLoad={onLoad}
 						position={position}
 						title={`${i + 1}. ${title}`}
-						label={`${i + 1}`}
+						label={`${i + 1}${title}`}
 					/>;
 				})}
 			</GoogleMap>

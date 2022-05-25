@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { ArrowLeftIcon, ArrowRightIcon } from '../Icons';
 import HeroItem from './HeroItem';
+import { SlideData } from './SliderData';
 
 const HeroSection = ({ slides, showModal }) => {
 	const [current, setCurrent] = useState(0);
-	const length = slides.length;
+	const length = SlideData.length;
+
+	console.log(SlideData);
 
 	const nextSlide = () => {
 		setCurrent(current === length - 1 ? 0 : current + 1);
@@ -16,11 +19,11 @@ const HeroSection = ({ slides, showModal }) => {
 		setCurrent(current === 0 ? length - 1 : current - 1);
 	};
 
-	if (!Array.isArray(slides) || slides.length <= 0) {
+	if (!Array.isArray(SlideData) || SlideData.length <= 0) {
 		return null;
 	}
 
-	if (!slides.length) return <p>No hay data</p>;
+	if (!SlideData.length) return <p>No hay data</p>;
 
 	return (
 		<AnimatePresence>
@@ -31,8 +34,13 @@ const HeroSection = ({ slides, showModal }) => {
 				</>
 			)}
 
-			{slides.map((slide, index) => (
-				<HeroItem slide={slide} index={index} />
+			{SlideData.map((slide, index) => (
+				<HeroItem
+					key={slide._id}
+					slide={slide}
+					index={index}
+					current={current}
+				/>
 			))}
 		</AnimatePresence>
 	);

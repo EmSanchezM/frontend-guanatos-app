@@ -71,7 +71,7 @@ const postEmployment = async employment => {
 			method: 'POST'
 		};
 
-		const response = await Axios('/employment', options);
+		const response = await Axios('/applicant', options);
 		const { data } = response;
 
 		if (data.status === 'success') {

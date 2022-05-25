@@ -10,8 +10,6 @@ export const useFormEmployment = () => {
 		getJobs(setJobs);
 	}, []);
 
-	console.log(jobs);
-
 	const initialValues = {
 		fullName: '',
 		email: '',

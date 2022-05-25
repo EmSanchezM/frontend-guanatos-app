@@ -9,7 +9,7 @@ const GalleryImages = ({ setSelectedImg, multimedia }) => {
 				<GalleryItem
 					key={media._id}
 					setSelectedImg={setSelectedImg}
-					{...media}
+					media={media}
 				/>
 			))}
 		</section>

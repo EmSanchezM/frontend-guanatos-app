@@ -1,28 +1,32 @@
 import PropTypes from 'prop-types';
+import logo from '../../assets/logo/logo.png';
 
-const LocationCard = ({ address, name, phones }) => {
+const LocationCard = ({ address, name, phones, images }) => {
 	return (
-		<article className='border-2 rounded-md mb-2 mx-2 mt-2'>
-			<div className='flex justify-between mx-4'>
-				<h3 className='text-2xl font-semibold font-primary'>
-					{name || 'Guanatos Tacos'}
-				</h3>
-			</div>
-			<hr className='border-1 border-gray-200' />
-			<br />
-			<span className='font-bold mx-2'>Phone: {phones}</span>
-			<div className='flex py-4 px-2'>
-				<ul>
-					<li>{address.street}</li>
-					<li>{address.state}</li>
-					<li>{address.city}</li>
-					<li>{address.zip}</li>
-				</ul>
-				<div className='flex flex-col justify-center ml-10 mr-1'>
-					<button className='bg-primary-400 p-2 my-2 rounded-md font-bold text-white'>
-						Get Direction
-					</button>
-					{/*<button className='bg-primary-400 p-2 my-2 rounded-md font-bold text-white'>Store Info</button>*/}
+		<article className='flex justify-center cursor-pointer mb-2'>
+			<div className='flex flex-col md:flex:row md:max-w-xl rounded-lg bg-gray-50 shadow-lg'>
+				<img
+					className='w-full md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg'
+					src={images[0] || logo}
+					alt='guanatos'
+				/>
+				<div className='flex flex-col justify-start'>
+					<h3 className='text-2xl text-center font-medium font-primary mb-2'>
+						{name || 'Guanatos Tacos'}
+					</h3>
+					<div className='text-base mx-2 mb-4'>
+						<h4 className='font-medium font-primary mr-2'>Phone</h4>
+						<span>{phones}</span>
+					</div>
+					<div className='text-base mx-2 mb-4'>
+						<h4 className='font-medium font-primary mr-2'>Address</h4>
+						<span>{address.street}</span>
+						<br />
+						<span>
+							{address.city}, {address.state}
+						</span>
+						<span> {address.zip}</span>
+					</div>
 				</div>
 			</div>
 		</article>
@@ -34,5 +38,6 @@ export default LocationCard;
 LocationCard.propTypes = {
 	address: PropTypes.object.isRequired,
 	name: PropTypes.string,
-	phones: PropTypes.array
+	phones: PropTypes.array,
+	images: PropTypes.array
 };
