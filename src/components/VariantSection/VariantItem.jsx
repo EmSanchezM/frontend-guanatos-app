@@ -23,7 +23,7 @@ const VariantItem = ({
 			key={media._id}
 			className={
 				fullWidth
-					? 'md:col-span-2 w-full cursor-pointer'
+					? 'md:col-span-2 lg:col-span-2 w-full cursor-pointer'
 					: 'w-full cursor-pointer'
 			}
 			layout

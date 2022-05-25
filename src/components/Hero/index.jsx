@@ -9,8 +9,6 @@ const HeroSection = ({ slides, showModal }) => {
 	const [current, setCurrent] = useState(0);
 	const length = SlideData.length;
 
-	console.log(SlideData);
-
 	const nextSlide = () => {
 		setCurrent(current === length - 1 ? 0 : current + 1);
 	};
