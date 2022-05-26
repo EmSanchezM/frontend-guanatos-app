@@ -15,9 +15,9 @@ const CarouselTable = () => {
 				<thead className='border-2 border-primary-200'>
 					<tr>
 						<th className='w-1/3 px-5 py-3 border-gray-200'>Image</th>
-						<th className='w-1/4 px-5 py-3 border-gray-200'>Title</th>
-						<th className='w-1/4 px-5 py-3 border-gray-200'>Section</th>
-						<th className='w-1/4 px-5 py-3 border-gray-200'>Actions</th>
+						<th className='w-1/3 px-5 py-3 border-gray-200'>Title</th>
+						<th className='w-1/3 px-5 py-3 border-gray-200'>Section</th>
+						<th className='w-1/3 px-5 py-3 border-gray-200'>Actions</th>
 					</tr>
 				</thead>
 				<tbody className='border-2 border-primary-200'>

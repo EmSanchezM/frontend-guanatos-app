@@ -15,20 +15,22 @@ const VariantMediaForm = () => {
 		fileThree: ''
 	});
 
-	const [, setAllMedia] = useState([]);
-
 	const handleSubmit = (values, submitProps) => {
 		const formData = new FormData();
 		let files = [];
+
+		console.log(values);
 
 		for (let value in values) {
 			files.push(values[value]);
 		}
 
-		formData.append('section', 'variant');
+		formData.append('section', 'gallery');
 		formData.append('files', files);
 
-		postAllMedia(formData, setAllMedia, navigate, '/publicist/media');
+		postAllMedia(formData);
+
+		navigate('/publicis/gallery');
 
 		submitProps.setSubmitting(false);
 		submitProps.resetForm();
