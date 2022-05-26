@@ -6,8 +6,7 @@ export default async (path, options = {}) => {
 	const token = localStorage.getItem('tokenId');
 
 	let headers = {
-		'Content-Type': 'application/json',
-		'Access-Control-Allow-Origin': '*'
+		'Content-Type': 'application/json'
 	};
 
 	if (token) {

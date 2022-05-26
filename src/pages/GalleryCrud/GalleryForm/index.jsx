@@ -21,13 +21,14 @@ const GalleryForm = () => {
 	const handleSubmit = (values, submitProps) => {
 		const formData = new FormData();
 		let files = [];
-		for (let value in values) {
-			files.push(values[value]);
-		}
+
+		values.forEach(value => {
+			files.push(value);
+		});
 
 		formData.append('section', 'gallery');
 		formData.append('media', files);
-		
+
 		postAllMedia(formData);
 		navigate('/publicist/gallery');
 
