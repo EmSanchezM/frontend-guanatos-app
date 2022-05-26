@@ -24,7 +24,7 @@ const Select = props => {
 				>
 					{options.map((option, index) => {
 						return (
-							<option key={`${option.id}-${index}`} value={option.id}>
+							<option key={`${option._id}-${index}`} value={option._id}>
 								{option.name}
 							</option>
 						);

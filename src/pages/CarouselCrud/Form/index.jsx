@@ -15,7 +15,7 @@ const FormCarousel = () => {
 		const formData = new FormData();
 		console.log('FILE CAROUSEL ', values.file);
 		formData.append('section', 'carousel');
-		formData.append('file', values.file);
+		formData.append('media', values.file);
 
 		postCarousel(formData);
 		navigate('/publicist/start');

@@ -66,6 +66,7 @@ const postCarousel = async carousel => {
 
 const postEmployment = async employment => {
 	try {
+		console.log(employment);
 		const options = {
 			data: employment,
 			method: 'POST'
@@ -74,7 +75,7 @@ const postEmployment = async employment => {
 		const response = await Axios('/applicant', options);
 		const { data } = response;
 
-		if (data.status === 'success') {
+		if (response.status === 'success') {
 			console.log(data.status);
 			toast.success('APPLICATION ADDED SUCCESFULLY');
 		}
@@ -103,9 +104,8 @@ const postContactUs = async contact => {
 			method: 'POST'
 		};
 		const response = await Axios('/contact', options);
-		const { data } = response;
 
-		if (data.status === 'success') {
+		if (response.status === 'success') {
 			toast.success('WE WILL GET IN TOUCH WITH YOU');
 		}
 	} catch (error) {
@@ -132,7 +132,7 @@ const getAllMedia = async setMedia => {
 		const response = await Axios('/media', options);
 		const { data } = response;
 
-		if (data.status === 'success') {
+		if (response.status === 'success') {
 			setMedia(data.data);
 		}
 	} catch (error) {
@@ -158,7 +158,7 @@ const deleteMedia = async (idMedia, setMedia) => {
 		const response = await Axios(`/media/${idMedia}`, options);
 		const { data } = response;
 
-		if (data.status === 'success') {
+		if (response.status === 'success') {
 			await getAllMedia(setMedia);
 			toast.success('FILE DELETED SUCCESSFULLY');
 		}

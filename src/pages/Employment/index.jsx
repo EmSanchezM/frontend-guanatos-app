@@ -3,19 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import logo from '../../assets/logo/logo.png';
-import {
-	Input,
-	InputFileWithoutPreview,
-	InputToggle,
-	Select
-} from '../../components/Form';
+import { Input, Select } from '../../components/Form';
 import { useFormEmployment } from '../../lib/hooks/employment/useFormEmployment';
 
 const Employment = () => {
-	const { initialValues, validationSchema, handleSubmit, positions } =
-		useFormEmployment();
-
 	const [t] = useTranslation('global');
+
+	const { initialValues, validationSchema, handleSubmit, positions, branches } =
+		useFormEmployment();
 
 	return (
 		<section className='min-w-screen min-h-screen bg-gray-100 flex items-center justify-center px-5 py-4'>
@@ -45,73 +40,38 @@ const Employment = () => {
 										<Input
 											type='text'
 											label='Full Name'
+											name='name'
 											placeholder='Full Name'
-											name='fullName'
 										/>
 									</div>
 									<div className='w-full lg:w-1/2 px-3 mb-3'>
 										<Input
 											type='email'
 											label='Email'
-											placeholder='Email'
 											name='email'
+											placeholder='Email'
 										/>
 									</div>
 								</div>
 								<div className='flex flex-wrap -mx-3 px-2'>
-									<div className='w-full lg:w-1/2 px-3 mb-5'>
-										<Input
-											type='text'
-											label='phone'
-											placeholder='Phone Number'
-											name='phone'
-										/>
-									</div>
-									<div className='w-full lg:w-1/2 px-4 lg:my-8 mb-5'>
-										<InputToggle
-											label='Adult'
-											placeholder='Adult'
-											name='adult'
-											id='adult'
-										/>
-									</div>
-								</div>
-								<div className='flex flex-wrap -mx-3 px-2'>
-									<div className='w-full px-3 mb-3'>
-										<Input
-											type='text'
-											label='Address'
-											placeholder='Address'
-											name='address'
-										/>
-									</div>
 									<div className='w-full px-3 mb-5'>
-										<Input
-											type='text'
-											label='City, State, Zip'
-											placeholder='city, state, zip code'
-											name='cityStateZip'
+										<Select
+											id='branch'
+											name='branch'
+											label='Branch'
+											options={branches}
 										/>
 									</div>
 								</div>
 								<div className='flex flex-wrap -mx-3 px-2'>
-									<div className='w-full lg:w-1/2 px-3 mb-5'>
-										<InputFileWithoutPreview
-											type='file'
-											label='resume'
-											placeholder='Resume'
-											id='resume'
-											name='resume'
+									<div className='w-full px-3 mb-5'>
+										<Select
+											id='position'
+											name='position'
+											label='Position Desired'
+											options={positions}
 										/>
 									</div>
-								</div>
-								<div className='flex flex-wrap -mx-3 px-2'>
-									<Select
-										id='positionDesired'
-										name='positionDesired'
-										label='Position Desired'
-										options={positions}
-									/>
 								</div>
 								<div className='flex flex-wrap -mx-3 px-4 mb-4 mt-4'>
 									<button type='submit' className='form__submit'>
