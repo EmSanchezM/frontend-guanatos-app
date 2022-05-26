@@ -23,7 +23,7 @@ const GalleryForm = () => {
 		let files = [];
 
 		values.forEach(value => {
-			files.push(value);
+			files.push(values[value]);
 		});
 
 		formData.append('section', 'gallery');

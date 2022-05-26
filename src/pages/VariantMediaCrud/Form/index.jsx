@@ -22,7 +22,7 @@ const VariantMediaForm = () => {
 		console.log(values);
 
 		values.forEach(value => {
-			files.push(value);
+			files.push(values[value]);
 		});
 
 		formData.append('section', 'gallery');
