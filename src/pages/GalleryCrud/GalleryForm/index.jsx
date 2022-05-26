@@ -22,9 +22,12 @@ const GalleryForm = () => {
 		const formData = new FormData();
 		let files = [];
 
-		values.forEach(value => {
-			files.push(values[value]);
-		});
+		files.push(values.imageOne);
+		files.push(values.imageTwo);
+		files.push(values.imageThree);
+		files.push(values.imageFour);
+		files.push(values.imageFive);
+		files.push(values.imageSix);
 
 		formData.append('section', 'gallery');
 		formData.append('media', files);

@@ -19,14 +19,12 @@ const VariantMediaForm = () => {
 		const formData = new FormData();
 		let files = [];
 
-		console.log(values);
-
-		values.forEach(value => {
-			files.push(values[value]);
-		});
+		files.push(values.fileOne);
+		files.push(values.fileTwo);
+		files.push(values.fileThree);
 
 		formData.append('section', 'gallery');
-		formData.append('files', files);
+		formData.append('media', files);
 
 		postAllMedia(formData);
 
