@@ -48,32 +48,32 @@ const MobileSidebar = ({ showSidebar, setShowSidebar }) => {
 						</div>
 						<div className='flex flex-col justify-evenly'>
 							<Link
-								to='/publicist/start'
+								to='/publisher/carousel'
 								className='rounded-xl sm:px-20 sm:py-2 px-14 py-2 sm:mx-4 mx-2 border-2 border-primary-200 mb-4 font-bold hover:border-primary-400'
 							>
 								Carousel
 							</Link>
 
 							{/*<Link 
-                                to='/publicist/card-food'
+                                to='/publisher/card-food'
                                 className='rounded-xl sm:px-20 sm:py-2 px-14 py-2 sm:mx-4 mx-2 border-2 border-primary-200 mb-4 font-bold hover:border-primary-400'
                             >
                                Popular Food
                             </Link>
                             <Link 
-                                to='/publicist/advertisements'
+                                to='/publisher/advertisements'
                                 className='rounded-xl sm:px-20 sm:py-2 px-14 py-2 sm:mx-4 mx-2 border-2 border-primary-200 mb-4 font-bold hover:border-primary-400'
                             >
                                 Advertisements
                             </Link>*/}
 							<Link
-								to='/publicist/gallery'
+								to='/publisher/gallery'
 								className='rounded-xl sm:px-20 sm:py-2 px-14 py-2 sm:mx-4 mx-2 border-2 border-primary-200 mb-4 font-bold hover:border-primary-400'
 							>
 								Gallery Images
 							</Link>
 							<Link
-								to='/publicist/media'
+								to='/publisher/media'
 								className='rounded-xl sm:px-20 sm:py-2 px-14 py-2 sm:mx-4 mx-2 border-2 border-primary-200 mb-4 font-bold hover:border-primary-400'
 							>
 								Section Media

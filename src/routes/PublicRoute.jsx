@@ -5,7 +5,7 @@ import AuthContext from '../lib/context/auth/authContext';
 const PublicRoute = ({ children }) => {
 	const { authenticated } = useContext(AuthContext);
 
-	if (authenticated) return <Navigate to='/publicist/start' />;
+	if (authenticated) return <Navigate to='/publisher/carousel' />;
 
 	return children;
 };

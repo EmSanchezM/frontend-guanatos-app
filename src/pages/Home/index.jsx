@@ -26,7 +26,7 @@ const Home = () => {
 			<MultimediaSection
 				setSelectedVideo={setSelectedVideo}
 				setSelectedImg={setSelectedImg}
-				gallery={gallery}
+				multimedia={multimedia}
 			/>
 			{selectedVideo && (
 				<Video
@@ -37,7 +37,7 @@ const Home = () => {
 			<h4 className='text-2xl lg:text-4xl font-bold font-primary mt-4 mx-2'>
 				Gallery Images
 			</h4>
-			<GalleryImages setSelectedImg={setSelectedImg} multimedia={multimedia} />
+			<GalleryImages setSelectedImg={setSelectedImg} gallery={gallery} />
 			{selectedImg && (
 				<Image selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
 			)}

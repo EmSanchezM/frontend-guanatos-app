@@ -47,7 +47,7 @@ const Login = () => {
 							</div>
 						</div>
 					)}
-					{user && <Navigate to='/publicist/start' replace={true} />}
+					{user && <Navigate to='/publisher/carousel' replace={true} />}
 				</div>
 				<div className='mt-10 my-4'>
 					<div className='flex flex-col'>

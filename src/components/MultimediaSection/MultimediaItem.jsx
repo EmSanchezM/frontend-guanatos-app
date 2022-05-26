@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
-import VariantDisplay from './MultimediaDisplay';
+import MultimediaDisplay from './MultimediaDisplay';
 
 const MultimediaItem = ({
 	media,
@@ -30,7 +30,7 @@ const MultimediaItem = ({
 			whileHover={{ opacity: 1 }}
 			onClick={() => handleChangeMedia(media)}
 		>
-			<VariantDisplay media={media} />
+			<MultimediaDisplay media={media} />
 		</motion.article>
 	);
 };
