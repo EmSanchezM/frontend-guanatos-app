@@ -33,7 +33,7 @@ const GalleryForm = () => {
 		formData.append('media', files);
 
 		postGallery(formData);
-		navigate('/publicist/gallery');
+		navigate('/publisher/gallery');
 
 		submitProps.setSubmitting(false);
 		submitProps.resetForm();

@@ -29,7 +29,7 @@ const MediaForm = () => {
 
 			await postMultimedia(formData);
 
-			navigate('/publicis/gallery');
+			navigate('/publisher/gallery');
 
 			submitProps.setSubmitting(false);
 			submitProps.resetForm();
