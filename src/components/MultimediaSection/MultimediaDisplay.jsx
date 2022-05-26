@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { PlayIcon } from '../Icons';
 
-const VariantDisplay = ({ media }) => {
+const MultimediaDisplay = ({ media }) => {
 	const { url, container, mimetype } = media?.file;
 
 	if (!mimetype.includes('image'))
@@ -32,4 +32,4 @@ const VariantDisplay = ({ media }) => {
 	);
 };
 
-export default VariantDisplay;
+export default MultimediaDisplay;

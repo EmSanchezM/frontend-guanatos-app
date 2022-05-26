@@ -1,7 +1,7 @@
 import GalleryItem from './GalleryItem';
 
 const GalleryImages = ({ setSelectedImg, multimedia }) => {
-	if (!multimedia.length) return <p>No hay data</p>;
+	if (!multimedia.length) return <p>There are not data</p>;
 
 	return (
 		<section className='gallery__grid'>

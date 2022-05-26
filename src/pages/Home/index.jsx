@@ -4,7 +4,7 @@ import GalleryImages from '../../components/GalleryImages';
 import HeroSection from '../../components/Hero';
 import Image from '../../components/Image';
 import ModalAlert from '../../components/ModalAlert';
-import VariantSection from '../../components/VariantSection';
+import MultimediaSection from '../../components/MultimediaSection';
 import Video from '../../components/Video';
 import { useMultimedia } from '../../lib/hooks/publisher';
 
@@ -23,7 +23,7 @@ const Home = () => {
 			<h4 className='text-2xl lg:text-4xl font-bold font-primary lg:mt-28 mx-2 my-4'>
 				More Popular
 			</h4>
-			<VariantSection
+			<MultimediaSection
 				setSelectedVideo={setSelectedVideo}
 				setSelectedImg={setSelectedImg}
 				gallery={gallery}

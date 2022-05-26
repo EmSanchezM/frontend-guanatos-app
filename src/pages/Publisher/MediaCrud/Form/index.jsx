@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { InputFile } from '../../../components/Form';
-import { postAllMedia } from '../../../lib/services/publisher';
+import { InputFile } from '../../../../components/Form';
+import { postMultimedia } from '../../../../lib/services/publisher';
 
-const VariantMediaForm = () => {
+const MediaForm = () => {
 	const navigate = useNavigate();
 
 	const [variantMedia, setVariantMedia] = useState({
@@ -15,28 +15,32 @@ const VariantMediaForm = () => {
 		fileThree: ''
 	});
 
-	const handleSubmit = (values, submitProps) => {
-		const formData = new FormData();
-		let files = [];
+	const handleSubmit = async (values, submitProps) => {
+		try {
+			const formData = new FormData();
+			let files = [];
 
-		files.push(values.fileOne);
-		files.push(values.fileTwo);
-		files.push(values.fileThree);
+			files.push(values.fileOne);
+			files.push(values.fileTwo);
+			files.push(values.fileThree);
 
-		formData.append('section', 'gallery');
-		formData.append('media', files);
+			formData.append('section', 'gallery');
+			formData.append('media', files);
 
-		postAllMedia(formData);
+			await postMultimedia(formData);
 
-		navigate('/publicis/gallery');
+			navigate('/publicis/gallery');
 
-		submitProps.setSubmitting(false);
-		submitProps.resetForm();
-		setVariantMedia({
-			fileOne: '',
-			fileTwo: '',
-			fileThree: ''
-		});
+			submitProps.setSubmitting(false);
+			submitProps.resetForm();
+			setVariantMedia({
+				fileOne: '',
+				fileTwo: '',
+				fileThree: ''
+			});
+		} catch (error) {
+			throw new Error(error);
+		}
 	};
 
 	return (
@@ -71,4 +75,4 @@ const VariantMediaForm = () => {
 	);
 };
 
-export default VariantMediaForm;
+export default MediaForm;

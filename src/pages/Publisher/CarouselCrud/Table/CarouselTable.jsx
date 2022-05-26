@@ -1,4 +1,4 @@
-import { useMultimedia } from '../../../lib/hooks/publisher';
+import { useMultimedia } from '../../../../lib/hooks/publisher';
 import CarouselRow from './CarouselRow';
 
 const CarouselTable = () => {

@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
-import VariantDisplay from './VariantDisplay';
+import VariantDisplay from './MultimediaDisplay';
 
-const VariantItem = ({
+const MultimediaItem = ({
 	media,
 	fullWidth,
 	setSelectedImg,
@@ -34,9 +34,9 @@ const VariantItem = ({
 		</motion.article>
 	);
 };
-export default VariantItem;
+export default MultimediaItem;
 
-VariantItem.propTypes = {
+MultimediaItem.propTypes = {
 	media: PropTypes.object.isRequired,
 	fullWidth: PropTypes.bool,
 	setSelectedVideo: PropTypes.func.isRequired,

@@ -1,4 +1,4 @@
-import { useMultimedia } from '../../../lib/hooks/publisher';
+import { useMultimedia } from '../../../../lib/hooks/publisher';
 import MediaRow from './MediaRow';
 
 const MediaTable = () => {

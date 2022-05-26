@@ -1,8 +1,8 @@
 import { Form, Formik } from 'formik';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { InputFileWithoutPreview } from '../../../components/Form';
-import { postCarousel } from '../../../lib/services/publisher';
+import { InputFileWithoutPreview } from '../../../../components/Form';
+import { postCarousel } from '../../../../lib/services/publisher';
 
 const FormCarousel = () => {
 	const navigate = useNavigate();

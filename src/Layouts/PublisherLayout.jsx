@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Header from '../components/Navigation/Sidebar/Header';
 import Sidebar from '../components/Navigation/Sidebar/Sidebar';
 
-const Publicist = () => {
+const Publisher = () => {
 	const [showSidebar, setShowSidebar] = useState(false);
 
 	const toggle = () => {
@@ -47,4 +47,4 @@ const Publicist = () => {
 	);
 };
 
-export default Publicist;
+export default Publisher;

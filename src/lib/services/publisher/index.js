@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import Axios from '../../Api/axios';
 
-const postAllMedia = async media => {
+const postMultimedia = async media => {
 	console.log('MEDIA FORM ', media);
 
 	try {
@@ -10,6 +10,36 @@ const postAllMedia = async media => {
 			method: 'POST'
 		};
 
+		const response = await Axios('/media', options);
+		const { data } = response;
+
+		if (data.status === 'success') {
+			toast.success('MULTIMEDIA ADDED SUCCESFULLY');
+		}
+	} catch (error) {
+		console.log('ERROR ', error);
+		let message;
+		switch (error.status) {
+			case 500:
+				message = 'Internal Server Error';
+				break;
+			case 401:
+				message = 'Invalid credentials';
+				break;
+			default:
+				message = error.message;
+				console.error(message);
+				toast.error('ERROR ADDING GALLERY');
+		}
+	}
+};
+
+const postGallery = async carousel => {
+	try {
+		const options = {
+			data: carousel,
+			method: 'POST'
+		};
 		const response = await Axios('/media', options);
 		const { data } = response;
 
@@ -29,7 +59,7 @@ const postAllMedia = async media => {
 			default:
 				message = error.message;
 				console.error(message);
-				toast.error('ERROR ADDING GALLERY');
+				toast.error('ERROR ADDING SLIDE');
 		}
 	}
 };
@@ -131,6 +161,7 @@ const getAllMedia = async setMedia => {
 		const options = { method: 'GET' };
 		const response = await Axios('/media', options);
 		const { data } = response;
+		console.log(data);
 
 		if (response.status === 'success') {
 			setMedia(data.data);
@@ -179,9 +210,10 @@ const deleteMedia = async idMedia => {
 };
 
 export {
-	getAllMedia,
-	postAllMedia,
 	deleteMedia,
+	getAllMedia,
+	postMultimedia,
+	postGallery,
 	postCarousel,
 	postEmployment,
 	postContactUs

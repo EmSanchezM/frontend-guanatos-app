@@ -1,10 +1,8 @@
-//import { useHistory } from 'react-router-dom'
+import logo from '../../../../assets/logo/logo.png';
+import { DeleteIcon } from '../../../../components/Icons';
+import { deleteMedia } from '../../../../lib/services/publisher';
 
-import logo from '../../../assets/logo/logo.png';
-import { DeleteIcon } from '../../../components/Icons';
-import { deleteMedia } from '../../../lib/services/publisher';
-
-const CarouselRow = ({ media }) => {
+const MediaRow = ({ media }) => {
 	const handleDelete = media => {
 		let confirm;
 		confirm = window.confirm('Are you sure to delete it?');
@@ -45,4 +43,4 @@ const CarouselRow = ({ media }) => {
 	);
 };
 
-export default CarouselRow;
+export default MediaRow;
