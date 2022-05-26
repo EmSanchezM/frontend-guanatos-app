@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import { useMultimedia } from '../../../../lib/hooks/publisher';
 import GalleryRow from './GalleryRow';
 
 const GalleryTable = () => {
 	const { gallery } = useMultimedia();
+	const [galleryMedia, setGalleryMedia] = useState(gallery);
 
-	if (!gallery.length)
+	if (!galleryMedia.length)
 		return <p className='flex justify-center font-bold'>There are not data</p>;
 
 	return (
@@ -19,8 +21,12 @@ const GalleryTable = () => {
 					</tr>
 				</thead>
 				<tbody className='border-2 border-primary-200'>
-					{gallery.map(media => (
-						<GalleryRow key={allMedia._id} media={media} />
+					{galleryMedia.map(media => (
+						<GalleryRow
+							key={media._id}
+							media={media}
+							setGalleryMedia={setGalleryMedia}
+						/>
 					))}
 				</tbody>
 			</table>

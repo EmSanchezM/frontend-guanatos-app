@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { useMultimedia } from '../../../../lib/hooks/publisher';
 import MediaRow from './MediaRow';
 
 const MediaTable = () => {
 	const { multimedia } = useMultimedia();
 
-	if (!multimedia.length)
+	const [allMultimedia, setAllMultimedia] = useState(multimedia);
+
+	if (!allMultimedia.length)
 		return <p className='flex justify-center font-bold'>There are not data</p>;
 
 	return (
@@ -19,8 +22,12 @@ const MediaTable = () => {
 					</tr>
 				</thead>
 				<tbody className='border-2 border-primary-200'>
-					{multimedia.map(media => (
-						<MediaRow key={allMedia._id} media={media} />
+					{allMultimedia.map(media => (
+						<MediaRow
+							key={media._id}
+							media={media}
+							setAllMultimedia={setAllMultimedia}
+						/>
 					))}
 				</tbody>
 			</table>

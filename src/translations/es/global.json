@@ -1,67 +1,67 @@
 {
-    "header": {
-        "home": "Inicio",
-        "locations": "Ubicaciones",
-        "menu": "Menu",
-        "about": "Sobre Nosotros",
-        "contact": "Contactanos",
-        "employment": "Empleo",
-        "order": "Ordena en linea"
-    },
+	"header": {
+		"home": "Inicio",
+		"locations": "Ubicaciones",
+		"menu": "Menu",
+		"about": "Sobre Nosotros",
+		"contact": "Contactanos",
+		"employment": "Empleo",
+		"order": "Ordena en linea"
+	},
 
-    "floating": {
-        "contactBtn": "Contactanos",
-        "buyBtn": "Comprar"
-    },
+	"floating": {
+		"contactBtn": "Contactanos",
+		"buyBtn": "Comprar"
+	},
 
-    "footer": {
-        "footerMision": "Traer lo mejor de la gastronomía de Guadalajara, México. Para que sientan por un momento que están en un rinconcito de su tierra.",
-        "footerVision": "Crear una empresa que se convierta en una fuente de trabajo en cada comunidad donde nos ubiquemos, creando una gran familia laboral, donde juntos podamos crear una fundación para ayudar a otras personas o familias en necesidad.",
-        "footerLink": "Enlaces Rápidos",
-        "footerL1": "Sobre Nosotros",
-        "footerL2": "Menu",
-        "footerL3": "Ubicaciones",
-        "footerL4": "Contactanos",
-        "footerL5": "Publicista",
-        "footerL6": "Intranet",
-        "footerSocial": "Síganos",
-        "footerDerechos": "Reservados todos los derechos."
-    },
+	"footer": {
+		"footerMision": "Traer lo mejor de la gastronomía de Guadalajara, México. Para que sientan por un momento que están en un rinconcito de su tierra.",
+		"footerVision": "Crear una empresa que se convierta en una fuente de trabajo en cada comunidad donde nos ubiquemos, creando una gran familia laboral, donde juntos podamos crear una fundación para ayudar a otras personas o familias en necesidad.",
+		"footerLink": "Enlaces Rápidos",
+		"footerL1": "Sobre Nosotros",
+		"footerL2": "Menu",
+		"footerL3": "Ubicaciones",
+		"footerL4": "Contactanos",
+		"footerL5": "Editor",
+		"footerL6": "Intranet",
+		"footerSocial": "Síganos",
+		"footerDerechos": "Reservados todos los derechos."
+	},
 
-    "aboutPage": {
-        "historyTitle": "Historia",
-        "misionTitle": "Mision",
-        "misionParrafo": "Traer lo mejor de la gastronomía de Guadalajara, México. Para que sientan por un momento que están en un rinconcito de su tierra.",
-        "visionTitle": "Vision",
-        "visionParrafo": "Crear una empresa que se convierta en una fuente de trabajo en cada comunidad donde nos ubiquemos, creando una gran familia laboral, donde juntos podamos crear una fundación para ayudar a otras personas o familias en necesidad."                       
-    },
+	"aboutPage": {
+		"historyTitle": "Historia",
+		"misionTitle": "Mision",
+		"misionParrafo": "Traer lo mejor de la gastronomía de Guadalajara, México. Para que sientan por un momento que están en un rinconcito de su tierra.",
+		"visionTitle": "Vision",
+		"visionParrafo": "Crear una empresa que se convierta en una fuente de trabajo en cada comunidad donde nos ubiquemos, creando una gran familia laboral, donde juntos podamos crear una fundación para ayudar a otras personas o familias en necesidad."
+	},
 
-    "contactPage": {
-        "contactTitle": "Contactanos",
-        "contactParafo": "Ingrese su información para contactarnos",
-        "labelName": "Nombre",
-        "labelApellido": "Apellido", 
-        "labelEmail": "Email",
-        "labelStreet": "Calle",
-        "labelCity": "Ciudad",
-        "labelState": "Estado",
-        "labelZipCode": "Codigo Postal",
-        "labelPhoneNumber": "Telefono",
-        "labelMessage": "Mensaje",
-        "labelBtn": "Enviar"
-    },
+	"contactPage": {
+		"contactTitle": "Contactanos",
+		"contactParafo": "Ingrese su información para contactarnos",
+		"labelName": "Nombre",
+		"labelApellido": "Apellido",
+		"labelEmail": "Email",
+		"labelStreet": "Calle",
+		"labelCity": "Ciudad",
+		"labelState": "Estado",
+		"labelZipCode": "Codigo Postal",
+		"labelPhoneNumber": "Telefono",
+		"labelMessage": "Mensaje",
+		"labelBtn": "Enviar"
+	},
 
-    "employmentPage": {
-        "employmentTitle": "Trabaja con nosotros",
-        "employmentParrafo": "Deseas trabajar con nosotros. Ingresa tus datos acá y nosotros contactaremos contigo",
-        "fullName": "Nombre Completo",
-        "email": "Email",
-        "phone": "Telefono",
-        "address": "Dirección",
-        "adult": "Es usted mayor de 21 años?",
-        "cityStateZip": "Ciudad, Estado y Código Postal",
-        "resume": "Resumen",
-        "positionDesired": "Posición Deseada",
-        "sendBtn": "Enviar"
-    }
+	"employmentPage": {
+		"employmentTitle": "Trabaja con nosotros",
+		"employmentParrafo": "Deseas trabajar con nosotros. Ingresa tus datos acá y nosotros contactaremos contigo",
+		"fullName": "Nombre Completo",
+		"email": "Email",
+		"phone": "Telefono",
+		"address": "Dirección",
+		"adult": "Es usted mayor de 21 años?",
+		"cityStateZip": "Ciudad, Estado y Código Postal",
+		"resume": "Resumen",
+		"positionDesired": "Posición Deseada",
+		"sendBtn": "Enviar"
+	}
 }

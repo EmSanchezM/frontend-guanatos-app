@@ -2,11 +2,11 @@ import logo from '../../../../assets/logo/logo.png';
 import { DeleteIcon } from '../../../../components/Icons';
 import { deleteMedia } from '../../../../lib/services/publisher';
 
-const GalleryRow = ({ media }) => {
+const GalleryRow = ({ media, setGalleryMedia }) => {
 	const handleDelete = media => {
 		let confirm;
 		confirm = window.confirm('Are you sure to delete it?');
-		if (confirm) deleteMedia(media._id);
+		if (confirm) deleteMedia(media._id, setGalleryMedia);
 	};
 
 	return (

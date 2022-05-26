@@ -11,9 +11,8 @@ const postMultimedia = async media => {
 		};
 
 		const response = await Axios('/media', options);
-		const { data } = response;
 
-		if (data.status === 'success') {
+		if (response.status === 'success') {
 			toast.success('MULTIMEDIA ADDED SUCCESFULLY');
 		}
 	} catch (error) {
@@ -41,9 +40,8 @@ const postGallery = async carousel => {
 			method: 'POST'
 		};
 		const response = await Axios('/media', options);
-		const { data } = response;
 
-		if (data.status === 'success') {
+		if (response.status === 'success') {
 			toast.success('GALLERY ADDED SUCCESFULLY');
 		}
 	} catch (error) {
@@ -71,9 +69,8 @@ const postCarousel = async carousel => {
 			method: 'POST'
 		};
 		const response = await Axios('/media', options);
-		const { data } = response;
 
-		if (data.status === 'success') {
+		if (response.status === 'success') {
 			toast.success('SLIDE ADDED SUCCESFULLY');
 		}
 	} catch (error) {
@@ -103,10 +100,8 @@ const postEmployment = async employment => {
 		};
 
 		const response = await Axios('/applicant', options);
-		const { data } = response;
 
 		if (response.status === 'success') {
-			console.log(data.status);
 			toast.success('APPLICATION ADDED SUCCESFULLY');
 		}
 	} catch (error) {
@@ -161,13 +156,11 @@ const getAllMedia = async setMedia => {
 		const options = { method: 'GET' };
 		const response = await Axios('/media', options);
 		const { data } = response;
-		console.log(data);
 
 		if (response.status === 'success') {
 			setMedia(data.data);
 		}
 	} catch (error) {
-		console.log('ERROR ', error);
 		let message;
 		switch (error.status) {
 			case 500:
@@ -183,14 +176,13 @@ const getAllMedia = async setMedia => {
 	}
 };
 
-const deleteMedia = async idMedia => {
+const deleteMedia = async (idMedia, setMedia) => {
 	try {
 		const options = { method: 'DELETE' };
-		const response = await Axios(`/media/${idMedia}`, options);
+		await Axios(`/media/${idMedia}`, options);
 
-		if (response.status === 'success') {
-			toast.success('FILE DELETED SUCCESSFULLY');
-		}
+		await getAllMedia(setMedia);
+		toast.success('FILE DELETED SUCCESSFULLY');
 	} catch (error) {
 		console.log('ERROR ', error);
 		let message;

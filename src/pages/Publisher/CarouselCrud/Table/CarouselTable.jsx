@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import { useMultimedia } from '../../../../lib/hooks/publisher';
 import CarouselRow from './CarouselRow';
 
 const CarouselTable = () => {
 	const { carousel } = useMultimedia();
+	const [allMedia, setAllMedia] = useState(carousel);
 
-	if (!carousel.length)
+	if (!allMedia.length)
 		return (
 			<span className='flex justify-center font-bold'>There are no data</span>
 		);
@@ -21,8 +23,12 @@ const CarouselTable = () => {
 					</tr>
 				</thead>
 				<tbody className='border-2 border-primary-200'>
-					{carousel.map(media => (
-						<CarouselRow key={media._id} media={media} />
+					{allMedia.map(media => (
+						<CarouselRow
+							key={media._id}
+							media={media}
+							setAllMedia={setAllMedia}
+						/>
 					))}
 				</tbody>
 			</table>

@@ -1,66 +1,66 @@
 {
-    "header": {
-        "home": "Home",
-        "locations": "Locations",
-        "menu": "Menu",
-        "about": "About us",
-        "contact": "Contact us",
-        "employment": "Employment",
-        "order": "Order Online"
-    },
+	"header": {
+		"home": "Home",
+		"locations": "Locations",
+		"menu": "Menu",
+		"about": "About us",
+		"contact": "Contact us",
+		"employment": "Employment",
+		"order": "Order Online"
+	},
 
-    "floating": {
-        "contactBtn": "Contact Us",
-        "buyBtn": "To Buy"
-    },
+	"floating": {
+		"contactBtn": "Contact Us",
+		"buyBtn": "To Buy"
+	},
 
-    "footer": {
-        "footerMision": "Bringing the best of the gastronomy of Guadalajara, Mexico. So that they feel for a moment that they are in a little corner of their land",
-        "footerVision": "Create a company that becomes a source of work in each community where we are located, creating a great working family, where together we can create a foundation to help other people or families in need.",
-        "footerLink": "Quick Links",
-        "footerL1": "About us",
-        "footerL2": "Menu",
-        "footerL3": "Locations",
-        "footerL4": "Contact Us",
-        "footerL5": "Publicist",
-        "footerL6": "Intranet",
-        "footerSocial": "Follow us",
-        "footerDerechos": "All Rights Reserved."
-    },
-    "aboutPage": {
-        "historyTitle": "History",
-        "misionTitle": "Mision",
-        "misionParrafo": "Bringing the best of the gastronomy of Guadalajara, Mexico. So that they feel for a moment that they are in a little corner of their land.",
-        "visionTitle": "Vision",
-        "visionParrafo": "Create a company that becomes a source of work in each community where we are located, creating a great working family, where together we can create a foundation to help other people or families in need."            
-    },
+	"footer": {
+		"footerMision": "Bringing the best of the gastronomy of Guadalajara, Mexico. So that they feel for a moment that they are in a little corner of their land",
+		"footerVision": "Create a company that becomes a source of work in each community where we are located, creating a great working family, where together we can create a foundation to help other people or families in need.",
+		"footerLink": "Quick Links",
+		"footerL1": "About us",
+		"footerL2": "Menu",
+		"footerL3": "Locations",
+		"footerL4": "Contact Us",
+		"footerL5": "Publisher",
+		"footerL6": "Intranet",
+		"footerSocial": "Follow us",
+		"footerDerechos": "All Rights Reserved."
+	},
+	"aboutPage": {
+		"historyTitle": "History",
+		"misionTitle": "Mision",
+		"misionParrafo": "Bringing the best of the gastronomy of Guadalajara, Mexico. So that they feel for a moment that they are in a little corner of their land.",
+		"visionTitle": "Vision",
+		"visionParrafo": "Create a company that becomes a source of work in each community where we are located, creating a great working family, where together we can create a foundation to help other people or families in need."
+	},
 
-    "contactPage": {
-        "contactTitle": "Contact Us",
-        "contactParafo": "Enter your information to contact us",
-        "labelName": "First Name",
-        "labelApellido": "Last Name", 
-        "labelEmail": "Email",
-        "labelStreet": "Street",
-        "labelCity": "City",
-        "labelState": "State",
-        "labelZipCode": "Zip Code",
-        "labelPhoneNumber": "Phone Number",
-        "labelMessage": "Message",
-        "labelBtn": "SEND"
-    },
+	"contactPage": {
+		"contactTitle": "Contact Us",
+		"contactParafo": "Enter your information to contact us",
+		"labelName": "First Name",
+		"labelApellido": "Last Name",
+		"labelEmail": "Email",
+		"labelStreet": "Street",
+		"labelCity": "City",
+		"labelState": "State",
+		"labelZipCode": "Zip Code",
+		"labelPhoneNumber": "Phone Number",
+		"labelMessage": "Message",
+		"labelBtn": "SEND"
+	},
 
-    "employmentPage": {
-        "employmentTitle": "Work With Us",
-        "employmentParrafo": "You want to work with us. Enter your information here and we will contact you",
-        "fullName": "Full Name",
-        "email": "Email",
-        "phone": "Phone",
-        "address": "Address",
-        "adult": "Are you Over 21?",
-        "cityStateZip": "City, State and Zip Code",
-        "resume": "Resume",
-        "positionDesired": "Position Desired",
-        "sendBtn": "Enviar"
-    }
+	"employmentPage": {
+		"employmentTitle": "Work With Us",
+		"employmentParrafo": "You want to work with us. Enter your information here and we will contact you",
+		"fullName": "Full Name",
+		"email": "Email",
+		"phone": "Phone",
+		"address": "Address",
+		"adult": "Are you Over 21?",
+		"cityStateZip": "City, State and Zip Code",
+		"resume": "Resume",
+		"positionDesired": "Position Desired",
+		"sendBtn": "Enviar"
+	}
 }

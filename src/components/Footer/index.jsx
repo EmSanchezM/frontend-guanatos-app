@@ -41,7 +41,7 @@ const Footer = () => {
 					<Link className='my-3 block text-white' to='/contact-us'>
 						{t('footer.footerL4')}
 					</Link>
-					<Link className='my-3 block text-white' to='/publicist-login'>
+					<Link className='my-3 block text-white' to='/publisher-login'>
 						{t('footer.footerL5')}
 					</Link>
 					<a
