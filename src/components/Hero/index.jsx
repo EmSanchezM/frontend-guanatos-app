@@ -8,7 +8,7 @@ const HeroSection = ({ slides, showModal }) => {
 	const [current, setCurrent] = useState(0);
 	const length = slides.length;
 
-	console.log(slides)
+	console.log(slides);
 
 	const nextSlide = () => {
 		setCurrent(current === length - 1 ? 0 : current + 1);
@@ -22,7 +22,7 @@ const HeroSection = ({ slides, showModal }) => {
 		return null;
 	}
 
-	if (!slides.length) return <p>No hay data</p>;
+	if (!slides.length) return <p>There are not data</p>;
 
 	return (
 		<AnimatePresence>

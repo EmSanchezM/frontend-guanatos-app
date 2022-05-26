@@ -33,10 +33,10 @@ const postMultimedia = async media => {
 	}
 };
 
-const postGallery = async carousel => {
+const postGallery = async gallery => {
 	try {
 		const options = {
-			data: carousel,
+			data: gallery,
 			method: 'POST'
 		};
 		const response = await Axios('/media', options);

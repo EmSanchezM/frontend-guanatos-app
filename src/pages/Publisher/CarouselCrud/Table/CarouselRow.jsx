@@ -20,10 +20,10 @@ const CarouselRow = ({ media, setAllMedia }) => {
 					/>
 				</div>
 			</td>
-			<td className='px-5 py-5 border-gray-200 text-sm text-center'>
+			<td className='px-5 py-5 border-gray-200 text-sm text-center capitalize'>
 				{media.file.container}
 			</td>
-			<td className='px-5 py-5 border-gray-200 text-sm text-center'>
+			<td className='px-5 py-5 border-gray-200 text-sm text-center capitalize'>
 				{media.section}
 			</td>
 			<td className='px-5 py-5 border-gray-200 text-sm text-center'>

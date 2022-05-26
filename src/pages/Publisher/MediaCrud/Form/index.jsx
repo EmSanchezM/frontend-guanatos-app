@@ -18,18 +18,15 @@ const MediaForm = () => {
 	const handleSubmit = async (values, submitProps) => {
 		try {
 			const formData = new FormData();
-			let files = [];
 
-			files.push(values.fileOne);
-			files.push(values.fileTwo);
-			files.push(values.fileThree);
-
-			formData.append('section', 'gallery');
-			formData.append('media', files);
+			formData.append('section', 'multimedia');
+			formData.append('media', values.fileOne);
+			formData.append('media', values.fileTwo);
+			formData.append('media', values.fileThree);
 
 			await postMultimedia(formData);
 
-			navigate('/publisher/gallery');
+			navigate('/publisher/media');
 
 			submitProps.setSubmitting(false);
 			submitProps.resetForm();

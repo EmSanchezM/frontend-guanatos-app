@@ -4,14 +4,9 @@ const HeroItem = ({ slide, index, current }) => (
 	<div key={index}>
 		{index === current && (
 			<section className='hero__section'>
-				<div>
+				<div className='mx-5 mt-2 md:mt-0 lg:mt-0'>
 					<HeroDisplay slide={slide} />
 				</div>
-				{/*<div className='mt-4 md:px-2 lg:w-1/3'>
-						<span className='hero__shortMessage'>{slide.badge}</span>
-						<h1 className='hero__title'>{slide.title}</h1>
-						<p className='hero__paragraph'>{slide.description}</p>
-			</div>*/}
 			</section>
 		)}
 	</div>

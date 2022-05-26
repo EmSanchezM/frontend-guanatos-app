@@ -20,17 +20,14 @@ const GalleryForm = () => {
 
 	const handleSubmit = (values, submitProps) => {
 		const formData = new FormData();
-		let files = [];
-
-		files.push(values.imageOne);
-		files.push(values.imageTwo);
-		files.push(values.imageThree);
-		files.push(values.imageFour);
-		files.push(values.imageFive);
-		files.push(values.imageSix);
 
 		formData.append('section', 'gallery');
-		formData.append('media', files);
+		formData.append('media', values.imageOne);
+		formData.append('media', values.imageTwo);
+		formData.append('media', values.imagreThree);
+		formData.append('media', values.imageFour);
+		formData.append('media', values.imageFive);
+		formData.append('media', values.imageSix);
 
 		postGallery(formData);
 		navigate('/publisher/gallery');

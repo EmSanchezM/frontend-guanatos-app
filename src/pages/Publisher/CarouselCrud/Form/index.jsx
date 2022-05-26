@@ -1,7 +1,7 @@
 import { Form, Formik } from 'formik';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { InputFileWithoutPreview } from '../../../../components/Form';
+import { InputFile } from '../../../../components/Form';
 import { postCarousel } from '../../../../lib/services/publisher';
 
 const FormCarousel = () => {
@@ -32,9 +32,9 @@ const FormCarousel = () => {
 			<hr />
 			<Formik initialValues={formCarousel} onSubmit={handleSubmit}>
 				<Form className='w-full'>
-					<div className='flex flex-wrap -mx-3 px-2'>
-						<div className='w-full md:w-1/2 px-3 mb-5'>
-							<InputFileWithoutPreview
+					<section className='grid grid-cols-1 gap-4'>
+						<div className='w-full px-3 mb-5'>
+							<InputFile
 								type='file'
 								label='Image or Video'
 								name='file'
@@ -42,15 +42,13 @@ const FormCarousel = () => {
 								placeholder='Image or Video'
 							/>
 						</div>
-					</div>
-					<div className='flex flex-wrap -mx-3 px-4 mb-4'>
-						<button
-							type='submit'
-							className='border-2 border-primary-200 rounded-md px-6 py-2 mx-1 fond-bold'
-						>
-							Save
-						</button>
-					</div>
+					</section>
+					<button
+						type='submit'
+						className='border-2 border-primary-200 rounded-md px-6 py-2 mx-1 fond-bold'
+					>
+						Save
+					</button>
 				</Form>
 			</Formik>
 		</div>

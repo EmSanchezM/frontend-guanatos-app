@@ -54,7 +54,7 @@
 }
 
 .hero__section {
-	@apply flex flex-col md:flex-row justify-center;
+	@apply flex flex-col justify-center;
 }
 
 .hero__image {

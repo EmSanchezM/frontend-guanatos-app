@@ -6,7 +6,7 @@ const GalleryTable = () => {
 	const { gallery } = useMultimedia();
 	const [galleryMedia, setGalleryMedia] = useState(gallery);
 
-	if (!galleryMedia.length)
+	if (!gallery.length)
 		return <p className='flex justify-center font-bold'>There are not data</p>;
 
 	return (
@@ -21,7 +21,7 @@ const GalleryTable = () => {
 					</tr>
 				</thead>
 				<tbody className='border-2 border-primary-200'>
-					{galleryMedia.map(media => (
+					{gallery.map(media => (
 						<GalleryRow
 							key={media._id}
 							media={media}

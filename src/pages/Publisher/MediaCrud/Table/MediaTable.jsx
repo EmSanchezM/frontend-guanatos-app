@@ -7,7 +7,7 @@ const MediaTable = () => {
 
 	const [allMultimedia, setAllMultimedia] = useState(multimedia);
 
-	if (!allMultimedia.length)
+	if (!multimedia.length)
 		return <p className='flex justify-center font-bold'>There are not data</p>;
 
 	return (
@@ -22,7 +22,7 @@ const MediaTable = () => {
 					</tr>
 				</thead>
 				<tbody className='border-2 border-primary-200'>
-					{allMultimedia.map(media => (
+					{multimedia.map(media => (
 						<MediaRow
 							key={media._id}
 							media={media}

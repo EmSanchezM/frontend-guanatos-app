@@ -6,7 +6,7 @@ const CarouselTable = () => {
 	const { carousel } = useMultimedia();
 	const [allMedia, setAllMedia] = useState(carousel);
 
-	if (!allMedia.length)
+	if (!carousel.length)
 		return (
 			<span className='flex justify-center font-bold'>There are no data</span>
 		);
@@ -23,7 +23,7 @@ const CarouselTable = () => {
 					</tr>
 				</thead>
 				<tbody className='border-2 border-primary-200'>
-					{allMedia.map(media => (
+					{carousel.map(media => (
 						<CarouselRow
 							key={media._id}
 							media={media}
