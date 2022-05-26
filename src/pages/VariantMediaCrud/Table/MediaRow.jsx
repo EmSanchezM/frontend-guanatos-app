@@ -3,11 +3,11 @@ import logo from '../../../assets/logo/logo.png';
 import { DeleteIcon } from '../../../components/Icons';
 import { deleteMedia } from '../../../lib/services/publisher';
 
-const MediaRow = ({ media, setAllMedia }) => {
+const MediaRow = ({ media }) => {
 	const handleDelete = media => {
 		let confirm;
 		confirm = window.confirm('Are you sure to delete it?');
-		if (confirm) deleteMedia(media._id, setAllMedia);
+		if (confirm) deleteMedia(media._id);
 	};
 
 	return (

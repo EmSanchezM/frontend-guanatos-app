@@ -1,15 +1,10 @@
-import { useEffect, useState } from 'react';
-import { getAllMedia } from '../../../lib/services/publisher';
+import { useMultimedia } from '../../../lib/hooks/publisher';
 import CarouselRow from './CarouselRow';
 
 const CarouselTable = () => {
-	const [allMedia, setAllMedia] = useState([]);
+	const { carousel } = useMultimedia();
 
-	useEffect(() => {
-		getAllMedia(setAllMedia);
-	}, []);
-
-	if (!allMedia.length)
+	if (!carousel.length)
 		return (
 			<span className='flex justify-center font-bold'>There are no data</span>
 		);
@@ -21,18 +16,13 @@ const CarouselTable = () => {
 					<tr>
 						<th className='w-1/3 px-5 py-3 border-gray-200'>Image</th>
 						<th className='w-1/4 px-5 py-3 border-gray-200'>Title</th>
-						<th className='w-1/4 px-5 py-3 border-gray-200'>Description</th>
-						<th className='w-1/4 px-5 py-3 border-gray-200'>Badge</th>
+						<th className='w-1/4 px-5 py-3 border-gray-200'>Section</th>
 						<th className='w-1/4 px-5 py-3 border-gray-200'>Actions</th>
 					</tr>
 				</thead>
 				<tbody className='border-2 border-primary-200'>
-					{allMedia.map(media => (
-						<CarouselRow
-							key={allMedia._id}
-							media={media}
-							setAllMedia={setAllMedia}
-						/>
+					{carousel.map(media => (
+						<CarouselRow key={media._id} media={media} />
 					))}
 				</tbody>
 			</table>

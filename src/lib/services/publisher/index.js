@@ -152,14 +152,12 @@ const getAllMedia = async setMedia => {
 	}
 };
 
-const deleteMedia = async (idMedia, setMedia) => {
+const deleteMedia = async idMedia => {
 	try {
 		const options = { method: 'DELETE' };
 		const response = await Axios(`/media/${idMedia}`, options);
-		const { data } = response;
 
 		if (response.status === 'success') {
-			await getAllMedia(setMedia);
 			toast.success('FILE DELETED SUCCESSFULLY');
 		}
 	} catch (error) {
