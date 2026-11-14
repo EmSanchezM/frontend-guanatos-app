@@ -1,6 +1,6 @@
 import { Form, Formik } from 'formik';
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { InputFile } from '../../../../components/Form';
 import { postCarousel } from '../../../../lib/services/publisher';
 

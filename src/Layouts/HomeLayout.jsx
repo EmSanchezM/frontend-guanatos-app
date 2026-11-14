@@ -30,9 +30,9 @@ const HomeRoutes = () => {
 
 	return (
 		<div className='flex flex-col min-h-screen'>
-			<Navbar toogle={toggle} ubication={ubication} />
+			<Navbar toggle={toggle} ubication={ubication} />
 			<Dropdown isOpen={isOpen} toggle={toggle} />
-			<main className='flex-grow'>
+			<main className='grow'>
 				<Outlet />
 			</main>
 			<Footer />

@@ -57,7 +57,7 @@ const Login = () => {
 							onSubmit={handleSubmit}
 						>
 							<Form>
-								<div className='mb-2 rounded bg-gray-200'>
+								<div className='mb-2 rounded-sm bg-gray-200'>
 									<Input
 										type='email'
 										label='Email'
@@ -65,7 +65,7 @@ const Login = () => {
 										name='email'
 									/>
 								</div>
-								<div className='mb-2 rounded bg-gray-200'>
+								<div className='mb-2 rounded-sm bg-gray-200'>
 									<Input
 										type='password'
 										label='password'

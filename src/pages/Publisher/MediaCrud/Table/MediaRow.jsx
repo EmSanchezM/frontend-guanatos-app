@@ -29,7 +29,7 @@ const MediaRow = ({ media, setAllMultimedia }) => {
 			<td className='px-5 py-5 border-gray-200 text-sm text-center'>
 				<div className='flex justify-between items-center'>
 					<button
-						className='p-4 rounded-full bg-red-200 outline-none'
+						className='p-4 rounded-full bg-red-200 outline-hidden'
 						onClick={() => handleDelete(media)}
 					>
 						<DeleteIcon className='w-5 h-5 text-primary-400 cursor-pointer' />
