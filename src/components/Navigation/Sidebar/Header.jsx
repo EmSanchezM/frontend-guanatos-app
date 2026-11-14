@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
+import { startTransition, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import authContext from '../../../lib/context/auth/authContext';
 import { MenuBarIcon } from '../../Icons';
@@ -10,8 +10,12 @@ const Header = ({ toggle }) => {
 	const { LogOut } = AuthContext;
 
 	const handleLogout = () => {
-		LogOut();
-		navigate('/');
+		// React Router runs navigations in a transition; logging out in the same
+		// transition keeps PrivateRoute from redirecting to the login page first
+		startTransition(() => {
+			navigate('/');
+			LogOut();
+		});
 	};
 
 	return (

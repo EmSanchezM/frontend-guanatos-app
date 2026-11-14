@@ -5,10 +5,11 @@ import AuthContext from './authContext';
 import AuthReducer from './authReducer';
 
 const AuthState = props => {
+	const token = localStorage.getItem('tokenId');
 	const initialState = {
-		token: localStorage.getItem('tokenId'),
+		token,
 		user: null,
-		authenticated: false,
+		authenticated: Boolean(token),
 		error: null
 	};
 
@@ -22,7 +23,7 @@ const AuthState = props => {
 			};
 			const response = await Axios('/users/login', options);
 
-			if (response.status === 'success') {
+			if (response.status === 'success' && response.token) {
 				localStorage.setItem('tokenId', response.token);
 				dispatch({
 					type: LOGIN_SUCCESS,
@@ -59,7 +60,7 @@ const AuthState = props => {
 		<AuthContext.Provider
 			value={{
 				token: state.token,
-				autenticado: state.autenticado,
+				authenticated: state.authenticated,
 				error: state.error,
 				user: state.user,
 				LogIn,
