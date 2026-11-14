@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import authContext from '../../../lib/context/auth/authContext';
 import { MenuBarIcon } from '../../Icons';
 
