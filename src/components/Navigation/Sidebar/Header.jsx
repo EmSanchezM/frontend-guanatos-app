@@ -22,7 +22,7 @@ const Header = ({ toggle }) => {
 				</button>
 				<div
 					onClick={handleLogout}
-					className='flex flex-shrink-0 items-center space-x-6'
+					className='flex shrink-0 items-center space-x-6'
 				>
 					<button className='border-2 border-primary-200 rounded-full px-2'>
 						Logout

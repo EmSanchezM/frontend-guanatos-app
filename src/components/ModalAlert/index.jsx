@@ -23,7 +23,7 @@ const ModalAlert = ({ showModal, setShowModal }) => {
 		<AnimatePresence exitBeforeEnter>
 			{showModal && (
 				<motion.div
-					className='fixed top-0 left-0 w-full h-full z-1 bg-gray-400 bg-opacity-75 font-primary'
+					className='fixed top-0 left-0 w-full h-full z-1 bg-gray-400/75 font-primary'
 					variants={backdrop}
 					initial='hidden'
 					animate='visible'
