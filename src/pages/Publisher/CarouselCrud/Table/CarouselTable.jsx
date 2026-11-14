@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import { useMultimedia } from '../../../../lib/hooks/publisher';
 import CarouselRow from './CarouselRow';
 
 const CarouselTable = () => {
-	const { carousel } = useMultimedia();
-	const [allMedia, setAllMedia] = useState(carousel);
+	const { carousel, setMedia } = useMultimedia();
 
 	if (!carousel.length)
 		return (
@@ -24,11 +22,7 @@ const CarouselTable = () => {
 				</thead>
 				<tbody className='border-2 border-primary-200'>
 					{carousel.map(media => (
-						<CarouselRow
-							key={media._id}
-							media={media}
-							setAllMedia={setAllMedia}
-						/>
+						<CarouselRow key={media._id} media={media} setAllMedia={setMedia} />
 					))}
 				</tbody>
 			</table>

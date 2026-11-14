@@ -22,5 +22,6 @@ export const useMultimedia = () => {
 
 	const { multimedia, gallery, carousel } = getFilterMedia(media);
 
-	return { multimedia, gallery, carousel };
+	// setMedia lets callers refresh the list, e.g. after deleting an item
+	return { multimedia, gallery, carousel, setMedia };
 };
