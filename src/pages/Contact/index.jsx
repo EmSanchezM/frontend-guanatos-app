@@ -66,16 +66,16 @@ const ContactUs = () => {
 									<div className='w-full md:w-1/2 px-3 mb-3'>
 										<Input
 											type='text'
-											label='First Name' //{t("contactPage.labelName")}
-											placeholder='First Name' //{t("contactPage.labelName")}
+											label='First Name' // {t("contactPage.labelName")}
+											placeholder='First Name' // {t("contactPage.labelName")}
 											name='firstName'
 										/>
 									</div>
 									<div className='w-full md:w-1/2 px-3 mb-3'>
 										<Input
 											type='text'
-											label='Last Name' //{t("contactPage.labelApellido")}
-											placeholder='Last Name' //{t("contactPage.labelApellido")}
+											label='Last Name' // {t("contactPage.labelApellido")}
+											placeholder='Last Name' // {t("contactPage.labelApellido")}
 											name='lastName'
 										/>
 									</div>
@@ -84,16 +84,16 @@ const ContactUs = () => {
 									<div className='w-full px-3 mb-3'>
 										<Input
 											type='email'
-											label='Email' //{t("contactPage.labelEmail")}
-											placeholder='Email' //{t("contactPage.labelEmail")}
+											label='Email' // {t("contactPage.labelEmail")}
+											placeholder='Email' // {t("contactPage.labelEmail")}
 											name='email'
 										/>
 									</div>
 									<div className='w-full px-3 mb-3'>
 										<Input
 											type='text'
-											label='Street' //{t("contactPage.labelStreet")}
-											placeholder='Street' //{t("contactPage.labelStreet")}
+											label='Street' // {t("contactPage.labelStreet")}
+											placeholder='Street' // {t("contactPage.labelStreet")}
 											name='street'
 										/>
 									</div>
@@ -102,16 +102,16 @@ const ContactUs = () => {
 									<div className='w-full md:w-1/2 px-3 mb-3'>
 										<Input
 											type='text'
-											label='City' //{t("contactPage.labelCity")}
-											placeholder='City' //{t("contactPage.labelCity")}
+											label='City' // {t("contactPage.labelCity")}
+											placeholder='City' // {t("contactPage.labelCity")}
 											name='city'
 										/>
 									</div>
 									<div className='w-full md:w-1/2 px-3 mb-3'>
 										<Input
 											type='text'
-											label='State' //{t("contactPage.labelState")}
-											placeholder='State' //{t("contactPage.labelState")}
+											label='State' // {t("contactPage.labelState")}
+											placeholder='State' // {t("contactPage.labelState")}
 											name='state'
 										/>
 									</div>
@@ -120,16 +120,16 @@ const ContactUs = () => {
 									<div className='w-full md:w-1/2 px-3 mb-3'>
 										<Input
 											type='text'
-											label='Zip Code' //{t("contactPage.labelZipCode")}
-											placeholder='Zip Code' //{t("contactPage.labelZipCode")}
+											label='Zip Code' // {t("contactPage.labelZipCode")}
+											placeholder='Zip Code' // {t("contactPage.labelZipCode")}
 											name='zipCode'
 										/>
 									</div>
 									<div className='w-full md:w-1/2 px-3 mb-3'>
 										<Input
 											type='text'
-											label='Phone Number' //{t("contactPage.labelPhoneNumber")}
-											placeholder='Phone Number' //{t("contactPage.labelPhoneNumber")}
+											label='Phone Number' // {t("contactPage.labelPhoneNumber")}
+											placeholder='Phone Number' // {t("contactPage.labelPhoneNumber")}
 											name='phoneNumber'
 										/>
 									</div>
@@ -138,8 +138,8 @@ const ContactUs = () => {
 									<div className='w-full px-3 mb-3'>
 										<TextArea
 											type='text'
-											label='Message' //{t("contactPage.labelMessage")}
-											placeholder='Message' //{t("contactPage.labelMessage")}
+											label='Message' // {t("contactPage.labelMessage")}
+											placeholder='Message' // {t("contactPage.labelMessage")}
 											name='messageContact'
 										/>
 									</div>

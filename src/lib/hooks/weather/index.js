@@ -14,8 +14,10 @@ export const useWeather = ubication => {
 	const setError = () => setWeather({ data: null, error: true });
 
 	useEffect(() => {
+		// 0,0 is useUbication's placeholder until the browser reports a position
+		if (!ubication.lat && !ubication.lng) return;
 		getWeatherByLocation(ubication, setData, setError);
-	}, []);
+	}, [ubication]);
 
 	return { weather: weather.data };
 };

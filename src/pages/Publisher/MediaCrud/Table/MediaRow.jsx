@@ -4,8 +4,7 @@ import { deleteMedia } from '../../../../lib/services/publisher';
 
 const MediaRow = ({ media, setAllMultimedia }) => {
 	const handleDelete = media => {
-		let confirm;
-		confirm = window.confirm('Are you sure to delete it?');
+		const confirm = window.confirm('Are you sure to delete it?');
 		if (confirm) deleteMedia(media._id, setAllMultimedia);
 	};
 

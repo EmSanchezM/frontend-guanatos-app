@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import { getAllMedia } from '../../services/publisher';
 
 const getFilterMedia = media => {
-	let multimedia = media.filter(
+	const multimedia = media.filter(
 		mediaData => mediaData.section === 'multimedia'
 	);
 
-	let gallery = media.filter(mediaData => mediaData.section === 'gallery');
+	const gallery = media.filter(mediaData => mediaData.section === 'gallery');
 
-	let carousel = media.filter(mediaData => mediaData.section === 'carousel');
+	const carousel = media.filter(mediaData => mediaData.section === 'carousel');
 
 	return { multimedia, gallery, carousel };
 };
@@ -22,5 +22,6 @@ export const useMultimedia = () => {
 
 	const { multimedia, gallery, carousel } = getFilterMedia(media);
 
-	return { multimedia, gallery, carousel };
+	// setMedia lets callers refresh the list, e.g. after deleting an item
+	return { multimedia, gallery, carousel, setMedia };
 };

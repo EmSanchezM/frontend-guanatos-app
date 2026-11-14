@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-/*STATICS FILES*/
+/* STATICS FILES */
 import logo from '../../assets/logo/logo.png';
-/*ICONS*/
+/* ICONS */
 import { FacebookIcon, InstagramIcon, TwitterIcon } from '../Icons';
 
 const Footer = () => {

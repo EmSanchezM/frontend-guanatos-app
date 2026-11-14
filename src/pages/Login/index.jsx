@@ -1,4 +1,4 @@
-/*Managment state form*/
+/* Managment state form */
 import { Form, Formik } from 'formik';
 import { useContext, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';

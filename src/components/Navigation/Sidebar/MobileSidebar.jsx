@@ -54,7 +54,7 @@ const MobileSidebar = ({ showSidebar, setShowSidebar }) => {
 								Carousel
 							</Link>
 
-							{/*<Link 
+							{/* <Link 
                                 to='/publisher/card-food'
                                 className='rounded-xl sm:px-20 sm:py-2 px-14 py-2 sm:mx-4 mx-2 border-2 border-primary-200 mb-4 font-bold hover:border-primary-400'
                             >
@@ -65,7 +65,7 @@ const MobileSidebar = ({ showSidebar, setShowSidebar }) => {
                                 className='rounded-xl sm:px-20 sm:py-2 px-14 py-2 sm:mx-4 mx-2 border-2 border-primary-200 mb-4 font-bold hover:border-primary-400'
                             >
                                 Advertisements
-                            </Link>*/}
+                            </Link> */}
 							<Link
 								to='/publisher/gallery'
 								className='rounded-xl sm:px-20 sm:py-2 px-14 py-2 sm:mx-4 mx-2 border-2 border-primary-200 mb-4 font-bold hover:border-primary-400'
