@@ -14,12 +14,21 @@ import GalleryCrud from '../pages/Publisher/GalleryCrud';
 import GalleryForm from '../pages/Publisher/GalleryCrud/GalleryForm';
 import MediaCrud from '../pages/Publisher/MediaCrud';
 import MediaForm from '../pages/Publisher/MediaCrud/Form';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 const AppRouter = () => {
 	return (
 		<div className='pattern__background'>
 			<Routes>
-				<Route path='/publisher-login' element={<Login />} />
+				<Route
+					path='/publisher-login'
+					element={
+						<PublicRoute>
+							<Login />
+						</PublicRoute>
+					}
+				/>
 				<Route path='/' element={<HomeLayout />}>
 					<Route index path='/' element={<Home />} />
 					<Route path='/about-us' element={<About />} />
@@ -28,7 +37,14 @@ const AppRouter = () => {
 					<Route path='/work-with-us' element={<Employment />} />
 					<Route path='/locations' element={<Locations />} />
 				</Route>
-				<Route path='/publisher' element={<PublisherLayout />}>
+				<Route
+					path='/publisher'
+					element={
+						<PrivateRoute>
+							<PublisherLayout />
+						</PrivateRoute>
+					}
+				>
 					<Route index path='/publisher/carousel' element={<CarouselCrud />} />
 					<Route path='/publisher/carousel/new' element={<FormCarousel />} />
 					<Route path='/publisher/gallery' element={<GalleryCrud />} />

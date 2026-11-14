@@ -5,7 +5,7 @@ import AuthContext from '../lib/context/auth/authContext';
 const PrivateRoute = ({ children }) => {
 	const { authenticated } = useContext(AuthContext);
 
-	if (!authenticated) return <Navigate to='/' />;
+	if (!authenticated) return <Navigate to='/publisher-login' replace />;
 
 	return children;
 };
