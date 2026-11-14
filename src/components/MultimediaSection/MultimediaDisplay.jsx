@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import logo from '../../assets/logo/logo.png';
 import { PlayIcon } from '../Icons';
 
 const MultimediaDisplay = ({ media }) => {
@@ -7,7 +8,7 @@ const MultimediaDisplay = ({ media }) => {
 	if (!mimetype.includes('image'))
 		return (
 			<div className='flex justify-center items-center cursor-pointer'>
-				<img
+				<motion.img
 					src={logo}
 					alt='section'
 					initial={{ opacity: 0 }}
