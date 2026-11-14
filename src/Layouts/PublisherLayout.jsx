@@ -11,8 +11,10 @@ const Publisher = () => {
 	};
 
 	useEffect(() => {
+		// Don't read showSidebar here: this listener is registered once and would
+		// only ever see its initial value. Setting false when closed is a no-op.
 		const hideMenu = () => {
-			if (window.innerWidth > 768 && showSidebar) {
+			if (window.innerWidth > 768) {
 				setShowSidebar(false);
 			}
 		};
