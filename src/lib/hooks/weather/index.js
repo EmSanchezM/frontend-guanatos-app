@@ -3,7 +3,7 @@ import { getWeatherByLocation } from '../../services/weather';
 
 export const useWeather = ubication => {
 	const [weather, setWeather] = useState({
-		data: [],
+		data: null,
 		error: false
 	});
 
@@ -11,7 +11,7 @@ export const useWeather = ubication => {
 		setWeather({ data: newData, error: false });
 	};
 
-	const setError = () => setWeather({ data: [], error: true });
+	const setError = () => setWeather({ data: null, error: true });
 
 	useEffect(() => {
 		getWeatherByLocation(ubication, setData, setError);
