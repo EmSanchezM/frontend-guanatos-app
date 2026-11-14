@@ -15,13 +15,13 @@ const SidebarContent = () => {
 					<PhotoIcon className='w-5 h-5 bg-gray-100 mr-2' />
 					Carousel
 				</Link>
-				{/*<Link 
+				{/* <Link 
                     to='/publisher/card-food'
                     className="flex items-center px-6 py-3 text-gray-400 hover:text-purple-600"  
                 >
                     <PhotoIcon className='w-5 h-5 bg-gray-100 mr-2' />
                     Popular Food  
-                </Link>*/}
+                </Link> */}
 				<Link
 					to='/publisher/gallery'
 					className='flex items-center px-6 py-3 text-gray-400 hover:text-purple-600'

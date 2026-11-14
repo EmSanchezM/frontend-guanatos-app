@@ -9,9 +9,9 @@ const FileUpload = ({ field, form, name, id, meta }) => {
 	const [media, setMedia] = useState(null);
 
 	const handleChangeMedia = e => {
-		let reader = new FileReader();
-		let file = e.target.files[0];
-		let extension = e.target.files[0]?.type.split('/')[0];
+		const reader = new FileReader();
+		const file = e.target.files[0];
+		const extension = e.target.files[0]?.type.split('/')[0];
 
 		setLoading(true);
 		reader.onloadend = () => {

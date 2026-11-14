@@ -9,7 +9,7 @@ const MultimediaDisplay = ({ media }) => {
 			<div className='flex justify-center items-center cursor-pointer'>
 				<img
 					src={logo}
-					alt={`section`}
+					alt='section'
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 1 }}

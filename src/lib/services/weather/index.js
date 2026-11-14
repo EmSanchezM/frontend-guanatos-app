@@ -39,7 +39,7 @@ export const getWeatherByLocation = async (ubication, setData, setError) => {
 };
 
 const getDate = () => {
-	let date = new Date();
+	const date = new Date();
 	return `${date.getMonth()}/${('0' + date.getDate() + 1).slice(
 		-2
 	)}/${date.getFullYear()} `;

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const FileUpload = ({ field, form, name, id, meta }) => {
 	const handleChangeMedia = e => {
-		let file = e.target.files[0];
+		const file = e.target.files[0];
 
 		form.setFieldValue(field.name, file);
 	};

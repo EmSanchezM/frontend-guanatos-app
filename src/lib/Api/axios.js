@@ -8,7 +8,7 @@ export default async (path, options = {}) => {
 	const baseURL = ATHOZ_API_URL;
 	const token = localStorage.getItem('tokenId');
 
-	let headers = {
+	const headers = {
 		'Content-Type': 'application/json'
 	};
 
