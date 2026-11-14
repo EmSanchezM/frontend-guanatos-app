@@ -1,10 +1,11 @@
 import { Field, useField } from 'formik';
 import PropTypes from 'prop-types';
+import { Fragment } from 'react';
 
 const RadioGroup = props => {
 	const { label, name, placeholder, options, ...rest } = props;
 
-	const [meta] = useField();
+	const [, meta] = useField(name);
 	const error = meta.touched && meta.error;
 
 	return (
@@ -15,18 +16,18 @@ const RadioGroup = props => {
 			<Field name={name} {...rest}>
 				{({ field }) => {
 					return options.map(option => {
+						const id = `${name}-${option.value}`;
 						return (
-							<>
+							<Fragment key={option.value}>
 								<input
-									key={options.id}
-									type='radio'
-									id={options.value}
-									value={option.value}
 									{...field}
+									type='radio'
+									id={id}
+									value={option.value}
 									checked={field.value === option.value}
 								/>
-								<label>{option.name}</label>
-							</>
+								<label htmlFor={id}>{option.name}</label>
+							</Fragment>
 						);
 					});
 				}}
