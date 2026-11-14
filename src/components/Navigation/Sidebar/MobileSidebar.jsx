@@ -22,7 +22,7 @@ const sidebar = {
 
 const MobileSidebar = ({ showSidebar, setShowSidebar }) => {
 	return (
-		<AnimatePresence exitBeforeEnter>
+		<AnimatePresence mode='wait'>
 			{showSidebar && (
 				<motion.div
 					className='fixed top-0 left-0 w-2/3 h-screen z-1 font-primary'

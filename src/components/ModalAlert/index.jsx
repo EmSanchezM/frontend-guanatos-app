@@ -20,7 +20,7 @@ const modal = {
 
 const ModalAlert = ({ showModal, setShowModal }) => {
 	return (
-		<AnimatePresence exitBeforeEnter>
+		<AnimatePresence mode='wait'>
 			{showModal && (
 				<motion.div
 					className='fixed top-0 left-0 w-full h-full z-1 bg-gray-400/75 font-primary'
