@@ -8,8 +8,18 @@ import MultimediaSection from '../../components/MultimediaSection';
 import Video from '../../components/Video';
 import { useMultimedia } from '../../lib/hooks/publisher';
 
+const WELCOME_MODAL_SEEN_KEY = 'welcomeModalSeen';
+
 const Home = () => {
-	const [showModal, setShowModal] = useState(false);
+	// Show the welcome modal once per browser; closing it marks it as seen
+	const [showModal, setShowModal] = useState(
+		() => !localStorage.getItem(WELCOME_MODAL_SEEN_KEY)
+	);
+
+	const closeModal = () => {
+		localStorage.setItem(WELCOME_MODAL_SEEN_KEY, 'true');
+		setShowModal(false);
+	};
 	const [selectedImg, setSelectedImg] = useState(null);
 	const [selectedVideo, setSelectedVideo] = useState(null);
 
@@ -19,7 +29,7 @@ const Home = () => {
 		<>
 			<HeroSection slides={carousel} showModal={showModal} />
 			<FloatingListButtons showModal={showModal} />
-			<ModalAlert showModal={showModal} setShowModal={setShowModal} />
+			<ModalAlert showModal={showModal} setShowModal={closeModal} />
 			<h4 className='text-2xl lg:text-4xl font-bold font-primary lg:mt-28 mx-2 my-4'>
 				More Popular
 			</h4>
