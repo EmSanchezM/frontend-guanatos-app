@@ -10,16 +10,22 @@ export const getWeatherByLocation = async (ubication, setData, setError) => {
 		const examplelon = -5.5682413;
 	*/
 
-	const resp = await axios.get(
-		`${WEATHER_MAP_API}/weather/?units=imperial&lat=${lat}&lon=${lng}&appid=${
-			import.meta.env.VITE_WEATHER_MAP_KEY
-		}`
-	);
-	const { data } = resp;
+	let data;
+	try {
+		const resp = await axios.get(
+			`${WEATHER_MAP_API}/weather/?units=imperial&lat=${lat}&lon=${lng}&appid=${
+				import.meta.env.VITE_WEATHER_MAP_KEY
+			}`
+		);
+		data = resp.data;
+	} catch (error) {
+		// Invalid or missing API key (401), quota exceeded, network failure...
+		setError(error.response?.data?.message ?? error.message);
+		return;
+	}
 
 	if (!data) {
-		weatherDTO.message = data.message;
-		setError(weatherDTO);
+		setError('Empty weather response');
 	} else {
 		weatherDTO = {
 			location: data.name,
