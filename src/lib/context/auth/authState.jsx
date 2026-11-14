@@ -1,5 +1,5 @@
-import { useReducer } from 'react';
-import Axios from '../../Api/axios';
+import { useEffect, useReducer } from 'react';
+import Axios, { UNAUTHORIZED_EVENT } from '../../Api/axios';
 import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT } from '../types';
 import AuthContext from './authContext';
 import AuthReducer from './authReducer';
@@ -14,6 +14,13 @@ const AuthState = props => {
 	};
 
 	const [state, dispatch] = useReducer(AuthReducer, initialState);
+
+	useEffect(() => {
+		const handleUnauthorized = () => dispatch({ type: LOGOUT });
+		window.addEventListener(UNAUTHORIZED_EVENT, handleUnauthorized);
+		return () =>
+			window.removeEventListener(UNAUTHORIZED_EVENT, handleUnauthorized);
+	}, []);
 
 	const LogIn = async values => {
 		try {
