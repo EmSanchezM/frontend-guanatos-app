@@ -6,7 +6,7 @@ import HeaderMenu from './HeaderMenu';
 import LanguageDisplay from './LanguageDisplay';
 import WheatherDisplay from './WeatherDisplay';
 
-const Navbar = ({ toogle, ubication }) => {
+const Navbar = ({ toggle, ubication }) => {
 	const [t, i18n] = useTranslation('global');
 
 	const { weather } = useWeather(ubication);
@@ -23,7 +23,7 @@ const Navbar = ({ toogle, ubication }) => {
 					<LanguageDisplay language={language} />
 				</button>
 			</div>
-			<HeaderMenu toggle={toogle} t={t} />
+			<HeaderMenu toggle={toggle} t={t} />
 		</>
 	);
 };

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../../../assets/logo/logo.png';
 import { MenuBarIcon } from '../../../Icons';
 
-const HeaderMenu = ({ toogle, t }) => (
+const HeaderMenu = ({ toggle, t }) => (
 	<header className='header' role='navigation'>
 		<Link className='mt-2 lg:mb-4 mb-0 font-primary uppercase' to='/'>
 			<img
@@ -12,7 +12,7 @@ const HeaderMenu = ({ toogle, t }) => (
 			/>
 		</Link>
 
-		<div className='px-8 cursor-pointer md:hidden' onClick={toogle}>
+		<div className='px-8 cursor-pointer md:hidden' onClick={toggle}>
 			<MenuBarIcon className='w-6 h-6' />
 		</div>
 		<nav className='md:block hidden'>
